@@ -157,5 +157,35 @@ while true; do
             update_list "Hindi Vocabulary (Opposites)" hindi_opposites
             ;;
         2)
-            update_list
+            update_list "English Vocabulary (Opposites)" english_opposites
+            ;;
+        3)
+            update_list "Pots Names (English to Hindi)" pots_names
+            ;;
+        4)
+            update_list "Flowers (English to Hindi)" flowers
+            ;;
+        5)
+            update_list "Parts of the Body (English to Hindi)" body_parts
+            ;;
+        6)
+            update_list "Days of the Week (English to Hindi)" days
+            ;;
+        7)
+            update_list "Months of the Year (English to Hindi)" months
+            ;;
+        *)
+            echo "Invalid choice!"
+            ;;
+        esac
+        ;;
+    9)
+        echo "Exiting the program. Goodbye!"
+        break
+        ;;
+    *)
+        echo "Invalid choice. Please try again."
+        ;;
+    esac
+done
             
