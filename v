@@ -106,6 +106,34 @@ declare -a birds=(
 "Turkey - टर्की" "Peafowl - तीतर" "Cock - मुर्गा" "Cuckoo - कोयल" "Titmouse - माउस पक्षी"
 )
 
+# Classroom Things (English to Hindi)
+declare -a classroom_things=(
+"Pen - कलम" "Pencil - पेंसिल" "Book - किताब" "Notebook - नोटबुक" "Eraser - रबर"
+"Chalk - चॉक" "Board - बोर्ड" "Desk - डेस्क" "Chair - कुर्सी" "Ruler - रूलर"
+"Bag - बैग" "Sharpener - शार्पनर" "Clock - घड़ी" "Map - नक्शा" "Globe - ग्लोब"
+"Scissors - कैंची" "Stapler - स्टेपलर" "Paper - कागज" "Folder - फोल्डर" "Calculator - कैलकुलेटर"
+)
+
+# Clothes (English to Hindi)
+declare -a clothes=(
+"Shirt - शर्ट" "Pant - पैंट" "Dress - ड्रेस" "Skirt - स्कर्ट" "T-shirt - टी-शर्ट"
+"Jeans - जींस" "Jacket - जैकेट" "Sweater - स्वेटर" "Coat - कोट" "Socks - मोजे"
+"Cap - टोपी" "Scarf - स्कार्फ" "Shoes - जूते" "Slippers - चप्पल" "Tie - टाई"
+"Kurta - कुर्ता" "Sari - साड़ी" "Lehenga - लहंगा" "Chudidar - चूड़ीदार" "Blouse - ब्लाउज"
+"Shorts - शॉर्ट्स" "Blazer - ब्लेज़र" "Raincoat - रेनकोट" "Sweatshirt - स्वेटशर्ट" "Pajama - पजामा"
+"Shawl - शॉल" "Belt - बेल्ट" "Hoodie - हुडी" "Boots - बूट्स" "Gloves - दस्ताने"
+)
+
+# Food Grains (English to Hindi)
+declare -a food_grains=(
+"Rice - चावल" "Wheat - गेहूं" "Barley - जौ" "Maize - मक्का" "Oats - जई"
+"Millet - बाजरा" "Ragi - रागी" "Chickpeas - चने" "Lentils - दाल" "Kidney Beans - राजमा"
+"Pulses - दलहन" "Soybeans - सोयाबीन" "Peas - मटर" "Pigeon Pea - तुअर दाल" "Black Beans - काले बीन्स"
+"Green Beans - हरे बीन्स" "Red Lentils - लाल मसूर" "Basmati Rice - बासमती चावल" "Brown Rice - भूरे चावल" "White Rice - सफेद चावल"
+"Black Gram - उड़द दाल" "Green Gram - मूँग दाल" "Mustard Seeds - सरसों के बीज" "Fenugreek Seeds - मेथी के बीज" "Coriander Seeds - धनिया के बीज"
+"Sesame Seeds - तिल के बीज" "Flax Seeds - अलसी के बीज" "Poppy Seeds - खसखस के बीज" "Sorghum - जो" "Amaranth - राजगीर"
+)
+
 # Function to display vocabulary data
 display_data() {
     local -n arr=$1
@@ -148,8 +176,11 @@ while true; do
     echo "9. View Vegetables (English to Hindi)"
     echo "10. View Fruits (English to Hindi)"
     echo "11. View Birds (English to Hindi)"
-    echo "12. Update Vocabulary List"
-    echo "13. Exit"
+    echo "12. View Classroom Things (English to Hindi)"
+    echo "13. View Clothes (English to Hindi)"
+    echo "14. View Food Grains (English to Hindi)"
+    echo "15. Update Vocabulary List"
+    echo "16. Exit"
 
     read choice
 
@@ -165,7 +196,10 @@ while true; do
         9) display_data vegetables ;;
         10) display_data fruits ;;
         11) display_data birds ;;
-        12)
+        12) display_data classroom_things ;;
+        13) display_data clothes ;;
+        14) display_data food_grains ;;
+        15)
             echo "Choose which list to update:"
             echo "1. Hindi Vocabulary (Opposites)"
             echo "2. English Vocabulary (Opposites)"
@@ -178,6 +212,9 @@ while true; do
             echo "9. Vegetables (English to Hindi)"
             echo "10. Fruits (English to Hindi)"
             echo "11. Birds (English to Hindi)"
+            echo "12. Classroom Things (English to Hindi)"
+            echo "13. Clothes (English to Hindi)"
+            echo "14. Food Grains (English to Hindi)"
             read update_choice
             case $update_choice in
                 1) update_list "Hindi Vocabulary (Opposites)" hindi_opposites ;;
@@ -191,10 +228,13 @@ while true; do
                 9) update_list "Vegetables (English to Hindi)" vegetables ;;
                 10) update_list "Fruits (English to Hindi)" fruits ;;
                 11) update_list "Birds (English to Hindi)" birds ;;
+                12) update_list "Classroom Things (English to Hindi)" classroom_things ;;
+                13) update_list "Clothes (English to Hindi)" clothes ;;
+                14) update_list "Food Grains (English to Hindi)" food_grains ;;
                 *) echo "Invalid choice!" ;;
             esac
             ;;
-        13) echo "Exiting the program. Goodbye!" && break ;;
+        16) echo "Exiting the program. Goodbye!" && break ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
 done
