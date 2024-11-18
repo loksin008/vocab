@@ -98,158 +98,81 @@ declare -a vegetables=(
 
 # Fruits (English to Hindi)
 declare -a fruits=(
-"Apple - सेब" "Banana - केला" "Mango - आम" "Grapes - अंगूर" "Orange - संतरों"
-"Pineapple - अनानास" "Peach - आड़ू" "Plum - आलूबुखारा" "Watermelon - तरबूज" "Papaya - पपीता"
-"Guava - अमरूद" "Pomegranate - अनार" "Lychee - लीची" "Apricot - खुबानी" "Cherries - चेरी"
-"Strawberry - स्ट्रॉबेरी" "Dragon Fruit - ड्रैगन फ्रूट" "Raspberry - रास्पबेरी" "Blackberry - जामुन"
-"Jackfruit - कटहल" "Coconut - नारियल" "Tamarind - इमली" "Lemon - नींबू"
-"Pear - नाशपाती" "Cranberry - क्रैनबेरी" "Gooseberry - आंवला"
+"Apple - सेब" "Banana - केला" "Orange - संतर" "Grapes - अंगूर" "Mango - आम"
+"Pineapple - अनानास" "Watermelon - तरबूज" "Papaya - पपीता" "Pomegranate - अनार" "Guava - अमरूद"
+"Lychee - लीची" "Peach - आड़ू" "Pear - नाशपाती" "Plum - आलूबुखारा" "Cherry - चेरी"
+"Strawberry - स्ट्रॉबेरी" "Apricot - खुमानी" "Coconut - नारियल" "Jackfruit - कटहल" "Custard Apple - शरीफा"
 )
 
 # Birds (English to Hindi)
 declare -a birds=(
-"Eagle - गरुड़" "Parrot - तोता" "Sparrow - गौरैया" "Peacock - मोर" "Crow - कौआ"
-"Hen - मुर्गी" "Duck - बतख" "Owl - उल्लू" "Pigeon - कबूतर" "Flamingo - फ्लेमिंगो"
-"Kingfisher - मछली मारनेवाला पक्षी" "Woodpecker - कठफोड़वा" "Pelican - पेलेकन" "Vulture - गिद्ध" "Swallow - स्वालो"
-"Hummingbird - हमिंगबर्ड" "Seagull - सीगल" "Robin - रॉबिन" "Cuckoo - कोयल" "Swift - स्विफ्ट"
-"Wren - व्रेन" "Blackbird - काला पक्षी" "Magpie - मैगपाई" "Starling - स्टार्लिंग" "Raven - कौआ"
-"Turkey - टर्की" "Peafowl - तीतर" "Cock - मुर्गा" "Cuckoo - कोयल" "Titmouse - माउस पक्षी"
+"Parrot - तोता" "Sparrow - गौरैया" "Pigeon - कबूतर" "Crow - कौआ" "Eagle - गरुड़"
+"Owl - उल्लू" "Peacock - मोर" "Duck - बतख" "Penguin - पेंगुइन" "Kingfisher - मछली पकड़ने वाला पक्षी"
+"Stork - सारस" "Swan - हंस" "Woodpecker - कठफोड़वा" "Vulture - गिद्ध" "Falcon - बाज"
 )
 
-# Classroom Things (English to Hindi)
-declare -a classroom_things=(
-"Pen - कलम" "Pencil - पेंसिल" "Book - किताब" "Notebook - नोटबुक" "Eraser - रबर"
-"Chalk - चॉक" "Board - बोर्ड" "Desk - डेस्क" "Chair - कुर्सी" "Ruler - रूलर"
-"Bag - बैग" "Sharpener - शार्पनर" "Clock - घड़ी" "Map - नक्शा" "Globe - ग्लोब"
-"Scissors - कैंची" "Stapler - स्टेपलर" "Paper - कागज" "Folder - फोल्डर" "Calculator - कैलकुलेटर"
+# Metals (English to Hindi)
+declare -a metals=(
+"Gold - सोना" "Silver - चांदी" "Iron - लोहे" "Copper - तांबा" "Aluminum - एल्यूमिनियम"
+"Lead - सीसा" "Zinc - जस्ता" "Platinum - प्लेटिनम" "Nickel - निकल" "Titanium - टाइटेनियम"
+"Mercury - पारा" "Tin - टिन" "Chromium - क्रोमियम" "Magnesium - मैग्नीशियम" "Cobalt - कोबाल्ट"
+"Antimony - ऐंटिमनी" "Manganese - मैंगनीज" "Bismuth - बिस्मथ" "Tungsten - टंगस्टन" "Rhodium - रोडियम"
 )
 
-# Clothes (English to Hindi)
-declare -a clothes=(
-"Shirt - शर्ट" "Pant - पैंट" "Dress - ड्रेस" "Skirt - स्कर्ट" "T-shirt - टी-शर्ट"
-"Jeans - जींस" "Jacket - जैकेट" "Sweater - स्वेटर" "Coat - कोट" "Socks - मोजे"
-"Cap - टोपी" "Scarf - स्कार्फ" "Shoes - जूते" "Slippers - चप्पल" "Tie - टाई"
-"Kurta - कुर्ता" "Sari - साड़ी" "Lehenga - लहंगा" "Chudidar - चूड़ीदार" "Blouse - ब्लाउज"
-"Shorts - शॉर्ट्स" "Blazer - ब्लेज़र" "Raincoat - रेनकोट" "Sweatshirt - स्वेटशर्ट" "Pajama - पजामा"
-"Shawl - शॉल" "Belt - बेल्ट" "Hoodie - हुडी" "Boots - बूट्स" "Gloves - दस्ताने"
-)
+# Display menus for user
+show_main_menu() {
+  clear
+  echo "Vocabulary Lists"
+  echo "1. Opposites"
+  echo "2. Masculine to Feminine"
+  echo "3. Pots Names"
+  echo "4. Flowers"
+  echo "5. Body Parts"
+  echo "6. Days of the Week"
+  echo "7. Months of the Year"
+  echo "8. Colors"
+  echo "9. Vegetables"
+  echo "10. Fruits"
+  echo "11. Birds"
+  echo "12. Metals"
+  echo "13. Exit"
+  read -p "Please select an option: " option
 
-# Food Grains (English to Hindi)
-declare -a food_grains=(
-"Rice - चावल" "Wheat - गेहूं" "Barley - जौ" "Maize - मक्का" "Oats - जई"
-"Millet - बाजरा" "Ragi - रागी" "Chickpeas - चने" "Lentils - दाल" "Kidney Beans - राजमा"
-"Pulses - दलहन" "Soybeans - सोयाबीन" "Peas - मटर" "Pigeon Pea - तुअर दाल" "Black Beans - काले बीन्स"
-"Green Beans - हरे बीन्स" "Red Lentils - लाल मसूर" "Basmati Rice - बासमती चावल" "Brown Rice - भूरे चावल" "White Rice - सफेद चावल"
-"Black Gram - उड़द दाल" "Green Gram - मूँग दाल" "Mustard Seeds - सरसों के बीज" "Fenugreek Seeds - मेथी के बीज" "Coriander Seeds - धनिया के बीज"
-"Sesame Seeds - तिल के बीज" "Flax Seeds - अलसी के बीज" "Poppy Seeds - खसखस के बीज" "Sorghum - जो" "Amaranth - राजगीर"
-)
-
-# Function to display vocabulary data
-display_data() {
-    local -n arr=$1
-    for i in "${arr[@]}"; do
-        echo "$i"
-    done
+  case $option in
+    1) show_vocabulary "Opposites" "english_opposites" "hindi_opposites" ;;
+    2) show_vocabulary "Masculine to Feminine" "masculine_feminine" "masculine_feminine" ;;
+    3) show_vocabulary "Pots Names" "pots_names" "pots_names" ;;
+    4) show_vocabulary "Flowers" "flowers" "flowers" ;;
+    5) show_vocabulary "Body Parts" "body_parts" "body_parts" ;;
+    6) show_vocabulary "Days of the Week" "days" "days" ;;
+    7) show_vocabulary "Months of the Year" "months" "months" ;;
+    8) show_vocabulary "Colors" "colors" "colors" ;;
+    9) show_vocabulary "Vegetables" "vegetables" "vegetables" ;;
+    10) show_vocabulary "Fruits" "fruits" "fruits" ;;
+    11) show_vocabulary "Birds" "birds" "birds" ;;
+    12) show_vocabulary "Metals" "metals" "metals" ;;
+    13) exit 0 ;;
+    *) echo "Invalid option, please try again." ;;
+  esac
 }
 
-# Function to update a list
-update_list() {
-    local list_name=$1
-    local -n arr=$2
+# Function to display the vocabulary list
+show_vocabulary() {
+  local category=$1
+  local english_array=$2
+  local hindi_array=$3
 
-    echo "Current $list_name:"
-    display_data arr
-
-    echo "Enter the index to update:"
-    read index
-    if [[ $index -ge 0 && $index -lt ${#arr[@]} ]]; then
-        echo "Enter the new value:"
-        read new_value
-        arr[$index]=$new_value
-        echo "$list_name updated successfully!"
-    else
-        echo "Invalid index!"
-    fi
+  clear
+  echo "$category"
+  eval "english_list=( \${$english_array[@]} )"
+  eval "hindi_list=( \${$hindi_array[@]} )"
+  for i in "${!english_list[@]}"; do
+    echo "${english_list[$i]} - ${hindi_list[$i]}"
+  done
+  read -p "Press any key to return to the main menu..." anykey
+  show_main_menu
 }
 
-# Main program loop
-while true; do
-    echo "Choose an option:"
-    echo "1. View English Vocabulary (Opposites)"
-    echo "2. View Hindi Vocabulary (Opposites)"
-    echo "3. View Pots Names (English to Hindi)"
-    echo "4. View Flowers (English to Hindi)"
-    echo "5. View Parts of the Body (English to Hindi)"
-    echo "6. View Days of the Week (English to Hindi)"
-    echo "7. View Months of the Year (English to Hindi)"
-    echo "8. View Colors (English to Hindi)"
-    echo "9. View Vegetables (English to Hindi)"
-    echo "10. View Fruits (English to Hindi)"
-    echo "11. View Birds (English to Hindi)"
-    echo "12. View Classroom Things (English to Hindi)"
-    echo "13. View Clothes (English to Hindi)"
-    echo "14. View Food Grains (English to Hindi)"
-    echo "15. View Masculine to Feminine (English to Hindi)"
-    echo "16. Update Vocabulary List"
-    echo "17. Exit"
-
-    read choice
-
-    case $choice in
-        1) display_data english_opposites ;;
-        2) display_data hindi_opposites ;;
-        3) display_data pots_names ;;
-        4) display_data flowers ;;
-        5) display_data body_parts ;;
-        6) display_data days ;;
-        7) display_data months ;;
-        8) display_data colors ;;
-        9) display_data vegetables ;;
-        10) display_data fruits ;;
-        11) display_data birds ;;
-        12) display_data classroom_things ;;
-        13) display_data clothes ;;
-        14) display_data food_grains ;;
-        15) display_data masculine_feminine ;;
-        16)
-            echo "Choose which list to update:"
-            echo "1. Hindi Vocabulary (Opposites)"
-            echo "2. English Vocabulary (Opposites)"
-            echo "3. Pots Names (English to Hindi)"
-            echo "4. Flowers (English to Hindi)"
-            echo "5. Parts of the Body (English to Hindi)"
-            echo "6. Days of the Week (English to Hindi)"
-            echo "7. Months of the Year (English to Hindi)"
-            echo "8. Colors (English to Hindi)"
-            echo "9. Vegetables (English to Hindi)"
-            echo "10. Fruits (English to Hindi)"
-            echo "11. Birds (English to Hindi)"
-            echo "12. Classroom Things (English to Hindi)"
-            echo "13. Clothes (English to Hindi)"
-            echo "14. Food Grains (English to Hindi)"
-            echo "15. Masculine to Feminine (English to Hindi)"
-            read update_choice
-            case $update_choice in
-                1) update_list "Hindi Vocabulary (Opposites)" hindi_opposites ;;
-                2) update_list "English Vocabulary (Opposites)" english_opposites ;;
-                3) update_list "Pots Names (English to Hindi)" pots_names ;;
-                4) update_list "Flowers (English to Hindi)" flowers ;;
-                5) update_list "Parts of the Body (English to Hindi)" body_parts ;;
-                6) update_list "Days of the Week (English to Hindi)" days ;;
-                7) update_list "Months of the Year (English to Hindi)" months ;;
-                8) update_list "Colors (English to Hindi)" colors ;;
-                9) update_list "Vegetables (English to Hindi)" vegetables ;;
-                10) update_list "Fruits (English to Hindi)" fruits ;;
-                11) update_list "Birds (English to Hindi)" birds ;;
-                12) update_list "Classroom Things (English to Hindi)" classroom_things ;;
-                13) update_list "Clothes (English to Hindi)" clothes ;;
-                14) update_list "Food Grains (English to Hindi)" food_grains ;;
-                15) update_list "Masculine to Feminine (English to Hindi)" masculine_feminine ;;
-                *) echo "Invalid choice!" ;;
-            esac
-            ;;
-        17) exit 0 ;;
-        *) echo "Invalid choice! Please try again." ;;
-    esac
-done
-                
+# Run the script
+show_main_menu
+      
