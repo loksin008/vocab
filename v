@@ -46,11 +46,11 @@ declare -a body_parts=(
 "Hand - हाथ" "Leg - पैर" "Arm - भुजा" "Foot - पैर का पंजा" "Heart - हृदय"
 "Lungs - फेफड़े" "Liver - यकृत" "Stomach - पेट" "Brain - मस्तिष्क" "Teeth - दांत"
 "Tongue - जीभ" "Hair - बाल" "Skin - त्वचा" "Bone - हड्डी" "Blood - रक्त"
-"Finger - अंगुली" "Thumb - अंगूठा" "Knee - घुटना" "Elbow - कोहनी"
-"Shoulder - कंधा" "Neck - गर्दन" "Chest - छाती" "Back - पीठ"
-"Waist - कमर" "Hip - नितंब" "Thigh - जांघ" "Calf - पिंडली" "Ankle - टखना"
-"Toe - पैर की अंगुली" "Forehead - माथा" "Cheek - गाल" "Chin - ठोड़ी"
-"Lips - होंठ" "Palm - हथेली" "Wrist - कलाई" "Heel - एड़ी"
+"Finger - अंगुली" "Thumb - अंगूठा" "Knee - घुटना" "Elbow - कोहनी" "Shoulder - कंधा"
+"Neck - गर्दन" "Chest - छाती" "Back - पीठ" "Waist - कमर" "Hip - नितंब"
+"Thigh - जांघ" "Calf - पिंडली" "Ankle - टखना" "Toe - पैर की अंगुली" "Forehead - माथा"
+"Cheek - गाल" "Chin - ठोड़ी" "Lips - होंठ" "Palm - हथेली" "Wrist - कलाई"
+"Heel - एड़ी"
 )
 
 # Days of the Week (English to Hindi)
@@ -93,17 +93,17 @@ declare -a fruits=(
 "Cherry - चेरी" "Melon - खरबूजा" "Blueberry - ब्लूबेरी" "Kiwi - कीवी" "Raspberry - रसभरी"
 "Jackfruit - कटहल" "Dragonfruit - ड्रैगनफ्रूट" "Avocado - एवोकाडो" "Papaw - पपाव" "Date - खजूर"
 "Fig - अंजीर" "Coconut - नारियल" "Cantaloupe - खरबूजा" "Tamarind - इमली" "Lemon - नींबू"
-"Pineapple - अनानास" "Pear - नाशपाती" "Coconut - नारियल" "Cranberry - क्रैनबेरी" "Gooseberry - आंवला"
+"Pear - नाशपाती" "Cranberry - क्रैनबेरी" "Gooseberry - आंवला"
 )
 
 # Birds (English to Hindi)
 declare -a birds=(
 "Eagle - गरुड़" "Parrot - तोता" "Sparrow - गौरैया" "Peacock - मोर" "Crow - कौआ"
-"Hen - मुर्गी" "Duck - बतख" "Owl - उल्लू" "Pigeon - कबूतर" "Eagle - गरुड़"
-"Flamingo - फ्लेमिंगो" "Kingfisher - मछली मारनेवाला पक्षी" "Woodpecker - कठफोड़वा" "Pelican - पेलेकन" "Vulture - गिद्ध"
-"Swallow - स्वालो" "Hummingbird - हमिंगबर्ड" "Seagull - सीगल" "Robin - रॉबिन" "Cuckoo - कोयल"
-"Swift - स्विफ्ट" "Wren - व्रेन" "Blackbird - काला पक्षी" "Magpie - मैगपाई" "Starling - स्टार्लिंग"
-"Raven - कौआ" "Turkey - टर्की" "Peafowl - तीतर" "Pigeon - कबूतर" "Cock - मुर्गा"
+"Hen - मुर्गी" "Duck - बतख" "Owl - उल्लू" "Pigeon - कबूतर" "Flamingo - फ्लेमिंगो"
+"Kingfisher - मछली मारनेवाला पक्षी" "Woodpecker - कठफोड़वा" "Pelican - पेलेकन" "Vulture - गिद्ध" "Swallow - स्वालो"
+"Hummingbird - हमिंगबर्ड" "Seagull - सीगल" "Robin - रॉबिन" "Cuckoo - कोयल" "Swift - स्विफ्ट"
+"Wren - व्रेन" "Blackbird - काला पक्षी" "Magpie - मैगपाई" "Starling - स्टार्लिंग" "Raven - कौआ"
+"Turkey - टर्की" "Peafowl - तीतर" "Cock - मुर्गा" "Cuckoo - कोयल" "Titmouse - माउस पक्षी"
 )
 
 # Function to display vocabulary data
@@ -144,8 +144,12 @@ while true; do
     echo "5. View Parts of the Body (English to Hindi)"
     echo "6. View Days of the Week (English to Hindi)"
     echo "7. View Months of the Year (English to Hindi)"
-    echo "8. Update Vocabulary List"
-    echo "9. Exit"
+    echo "8. View Colors (English to Hindi)"
+    echo "9. View Vegetables (English to Hindi)"
+    echo "10. View Fruits (English to Hindi)"
+    echo "11. View Birds (English to Hindi)"
+    echo "12. Update Vocabulary List"
+    echo "13. Exit"
 
     read choice
 
@@ -157,7 +161,11 @@ while true; do
         5) display_data body_parts ;;
         6) display_data days ;;
         7) display_data months ;;
-        8)
+        8) display_data colors ;;
+        9) display_data vegetables ;;
+        10) display_data fruits ;;
+        11) display_data birds ;;
+        12)
             echo "Choose which list to update:"
             echo "1. Hindi Vocabulary (Opposites)"
             echo "2. English Vocabulary (Opposites)"
@@ -166,6 +174,10 @@ while true; do
             echo "5. Parts of the Body (English to Hindi)"
             echo "6. Days of the Week (English to Hindi)"
             echo "7. Months of the Year (English to Hindi)"
+            echo "8. Colors (English to Hindi)"
+            echo "9. Vegetables (English to Hindi)"
+            echo "10. Fruits (English to Hindi)"
+            echo "11. Birds (English to Hindi)"
             read update_choice
             case $update_choice in
                 1) update_list "Hindi Vocabulary (Opposites)" hindi_opposites ;;
@@ -175,10 +187,14 @@ while true; do
                 5) update_list "Parts of the Body (English to Hindi)" body_parts ;;
                 6) update_list "Days of the Week (English to Hindi)" days ;;
                 7) update_list "Months of the Year (English to Hindi)" months ;;
+                8) update_list "Colors (English to Hindi)" colors ;;
+                9) update_list "Vegetables (English to Hindi)" vegetables ;;
+                10) update_list "Fruits (English to Hindi)" fruits ;;
+                11) update_list "Birds (English to Hindi)" birds ;;
                 *) echo "Invalid choice!" ;;
             esac
             ;;
-        9) echo "Exiting the program. Goodbye!" && break ;;
+        13) echo "Exiting the program. Goodbye!" && break ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
 done
