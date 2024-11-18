@@ -27,47 +27,6 @@ declare -a english_opposites=(
 "Cold - Warm" "Sweet - Bitter" "Lover - Hater" "Pure - Impure"
 )
 
-# Function to update a vocabulary list
-function update_list() {
-    local list_name=$1
-    local -n list=$2
-    echo "Current entries in $list_name:"
-    for i in "${!list[@]}"; do
-        echo "$i. ${list[$i]}"
-    done
-
-    read -p "Enter the index number of the word you want to update: " index
-    if [ "$index" -ge 0 ] && [ "$index" -lt "${#list[@]}" ]; then
-        read -p "Enter the new word/phrase: " new_word
-        list[$index]="$new_word"
-        echo "$list_name updated successfully!"
-    else
-        echo "Invalid index!"
-    fi
-}
-
-# Function to display main menu
-function show_menu() {
-    echo "Select an option:"
-    echo "1. Hindi Vocabulary (Opposites)"
-    echo "2. English Vocabulary (Opposites)"
-    echo "3. Pots Names (English to Hindi)"
-    echo "4. Flowers (English to Hindi)"
-    echo "5. Parts of the Body (English to Hindi)"
-    echo "6. Days of the Week (English to Hindi)"
-    echo "7. Months of the Year (English to Hindi)"
-    echo "8. Update Vocabulary List"
-    echo "9. Exit"
-}
-
-# Function to display data
-function display_data() {
-    local array=("$@")
-    for item in "${array[@]}"; do
-        echo "$item"
-    done
-}
-
 # Pots Names (English to Hindi)
 declare -a pots_names=(
 "Flower Pot - फूल का बर्तन" "Clay Pot - मिट्टी का बर्तन" "Terracotta Pot - टेराकोटा बर्तन" "Plastic Pot - प्लास्टिक का बर्तन"
@@ -107,85 +66,120 @@ declare -a months=(
 "September - सितंबर" "October - अक्टूबर" "November - नवंबर" "December - दिसंबर"
 )
 
+# Colors (English to Hindi)
+declare -a colors=(
+"Red - लाल" "Blue - नीला" "Green - हरा" "Yellow - पीला" "Black - काला"
+"White - सफेद" "Pink - गुलाबी" "Orange - नारंगी" "Purple - बैंगनी" "Brown - भूरा"
+"Gray - धूसर" "Golden - सुनहरा" "Silver - चांदी" "Beige - बेज" "Violet - बैंगनी"
+"Indigo - नील" "Turquoise - फिरोजी" "Magenta - मैजेंटा" "Maroon - महरून" "Olive - जैतून"
+)
+
+# Vegetables (English to Hindi)
+declare -a vegetables=(
+"Potato - आलू" "Onion - प्याज" "Tomato - टमाटर" "Carrot - गाजर" "Cucumber - खीरा"
+"Spinach - पालक" "Cauliflower - फूलगोभी" "Cabbage - बंदगोभी" "Peas - मटर" "Pumpkin - कद्दू"
+"Brinjal - बैंगन" "Bottle Gourd - लौकी" "Radish - मूली" "Bitter Gourd - करेला" "Sweet Potato - शकरकंद"
+"Beans - बीन्स" "Lettuce - सलाद" "Garlic - लहसुन" "Ginger - अदरक" "Chili - मिर्च"
+"Okra - भिंडी" "Corn - मक्का" "Mushroom - मशरूम" "Zucchini - तोरी" "Turnip - शलगम"
+"Fenugreek - मेथी" "Asparagus - शतावरी" "Celery - शलरी" "Artichoke - आर्टिचोक" "Beetroot - चुकंदर"
+"Leek - प्याज की किस्म" "Chayote - चायोटे" "Parsnip - पार्सनिप" "Kale - केल" "Chard - चर्ड"
+)
+
+# Fruits (English to Hindi)
+declare -a fruits=(
+"Apple - सेब" "Banana - केला" "Orange - संत्रा" "Mango - आम" "Pineapple - अनानास"
+"Watermelon - तरबूज" "Grapes - अंगूर" "Papaya - पपीता" "Pomegranate - अनार" "Guava - अमरूद"
+"Peach - आड़ू" "Plum - आलूबुखारा" "Lychee - लीची" "Strawberry - स्ट्रॉबेरी" "Apricot - खुबानी"
+"Cherry - चेरी" "Melon - खरबूजा" "Blueberry - ब्लूबेरी" "Kiwi - कीवी" "Raspberry - रसभरी"
+"Jackfruit - कटहल" "Dragonfruit - ड्रैगनफ्रूट" "Avocado - एवोकाडो" "Papaw - पपाव" "Date - खजूर"
+"Fig - अंजीर" "Coconut - नारियल" "Cantaloupe - खरबूजा" "Tamarind - इमली" "Lemon - नींबू"
+"Pineapple - अनानास" "Pear - नाशपाती" "Coconut - नारियल" "Cranberry - क्रैनबेरी" "Gooseberry - आंवला"
+)
+
+# Birds (English to Hindi)
+declare -a birds=(
+"Eagle - गरुड़" "Parrot - तोता" "Sparrow - गौरैया" "Peacock - मोर" "Crow - कौआ"
+"Hen - मुर्गी" "Duck - बतख" "Owl - उल्लू" "Pigeon - कबूतर" "Eagle - गरुड़"
+"Flamingo - फ्लेमिंगो" "Kingfisher - मछली मारनेवाला पक्षी" "Woodpecker - कठफोड़वा" "Pelican - पेलेकन" "Vulture - गिद्ध"
+"Swallow - स्वालो" "Hummingbird - हमिंगबर्ड" "Seagull - सीगल" "Robin - रॉबिन" "Cuckoo - कोयल"
+"Swift - स्विफ्ट" "Wren - व्रेन" "Blackbird - काला पक्षी" "Magpie - मैगपाई" "Starling - स्टार्लिंग"
+"Raven - कौआ" "Turkey - टर्की" "Peafowl - तीतर" "Pigeon - कबूतर" "Cock - मुर्गा"
+)
+
+# Function to display vocabulary data
+display_data() {
+    local -n arr=$1
+    for i in "${arr[@]}"; do
+        echo "$i"
+    done
+}
+
+# Function to update a list
+update_list() {
+    local list_name=$1
+    local -n arr=$2
+
+    echo "Current $list_name:"
+    display_data arr
+
+    echo "Enter the index to update:"
+    read index
+    if [[ $index -ge 0 && $index -lt ${#arr[@]} ]]; then
+        echo "Enter the new value:"
+        read new_value
+        arr[$index]=$new_value
+        echo "$list_name updated successfully!"
+    else
+        echo "Invalid index!"
+    fi
+}
+
 # Main program loop
 while true; do
-    show_menu
-    read -p "Enter your choice: " choice
+    echo "Choose an option:"
+    echo "1. View English Vocabulary (Opposites)"
+    echo "2. View Hindi Vocabulary (Opposites)"
+    echo "3. View Pots Names (English to Hindi)"
+    echo "4. View Flowers (English to Hindi)"
+    echo "5. View Parts of the Body (English to Hindi)"
+    echo "6. View Days of the Week (English to Hindi)"
+    echo "7. View Months of the Year (English to Hindi)"
+    echo "8. Update Vocabulary List"
+    echo "9. Exit"
+
+    read choice
 
     case $choice in
-    1)
-        echo "Hindi Opposites:"
-        display_data "${hindi_opposites[@]}"
-        ;;
-    2)
-        echo "English Opposites:"
-        display_data "${english_opposites[@]}"
-        ;;
-    3)
-        echo "Pots Names (English to Hindi):"
-        display_data "${pots_names[@]}"
-        ;;
-    4)
-        echo "Flowers (English to Hindi):"
-        display_data "${flowers[@]}"
-        ;;
-    5)
-        echo "Parts of the Body (English to Hindi):"
-        display_data "${body_parts[@]}"
-        ;;
-    6)
-        echo "Days of the Week (English to Hindi):"
-        display_data "${days[@]}"
-        ;;
-    7)
-        echo "Months of the Year (English to Hindi):"
-        display_data "${months[@]}"
-        ;;
-    8)
-        echo "Select the vocabulary list you want to update:"
-        echo "1. Hindi Vocabulary (Opposites)"
-        echo "2. English Vocabulary (Opposites)"
-        echo "3. Pots Names (English to Hindi)"
-        echo "4. Flowers (English to Hindi)"
-        echo "5. Parts of the Body (English to Hindi)"
-        echo "6. Days of the Week (English to Hindi)"
-        echo "7. Months of the Year (English to Hindi)"
-        read -p "Enter your choice: " update_choice
-        
-        case $update_choice in
-        1)
-            update_list "Hindi Vocabulary (Opposites)" hindi_opposites
+        1) display_data english_opposites ;;
+        2) display_data hindi_opposites ;;
+        3) display_data pots_names ;;
+        4) display_data flowers ;;
+        5) display_data body_parts ;;
+        6) display_data days ;;
+        7) display_data months ;;
+        8)
+            echo "Choose which list to update:"
+            echo "1. Hindi Vocabulary (Opposites)"
+            echo "2. English Vocabulary (Opposites)"
+            echo "3. Pots Names (English to Hindi)"
+            echo "4. Flowers (English to Hindi)"
+            echo "5. Parts of the Body (English to Hindi)"
+            echo "6. Days of the Week (English to Hindi)"
+            echo "7. Months of the Year (English to Hindi)"
+            read update_choice
+            case $update_choice in
+                1) update_list "Hindi Vocabulary (Opposites)" hindi_opposites ;;
+                2) update_list "English Vocabulary (Opposites)" english_opposites ;;
+                3) update_list "Pots Names (English to Hindi)" pots_names ;;
+                4) update_list "Flowers (English to Hindi)" flowers ;;
+                5) update_list "Parts of the Body (English to Hindi)" body_parts ;;
+                6) update_list "Days of the Week (English to Hindi)" days ;;
+                7) update_list "Months of the Year (English to Hindi)" months ;;
+                *) echo "Invalid choice!" ;;
+            esac
             ;;
-        2)
-            update_list "English Vocabulary (Opposites)" english_opposites
-            ;;
-        3)
-            update_list "Pots Names (English to Hindi)" pots_names
-            ;;
-        4)
-            update_list "Flowers (English to Hindi)" flowers
-            ;;
-        5)
-            update_list "Parts of the Body (English to Hindi)" body_parts
-            ;;
-        6)
-            update_list "Days of the Week (English to Hindi)" days
-            ;;
-        7)
-            update_list "Months of the Year (English to Hindi)" months
-            ;;
-        *)
-            echo "Invalid choice!"
-            ;;
-        esac
-        ;;
-    9)
-        echo "Exiting the program. Goodbye!"
-        break
-        ;;
-    *)
-        echo "Invalid choice. Please try again."
-        ;;
+        9) echo "Exiting the program. Goodbye!" && break ;;
+        *) echo "Invalid choice. Please try again." ;;
     esac
 done
-            
+                
