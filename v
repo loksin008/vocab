@@ -27,6 +27,19 @@ declare -a english_opposites=(
 "Cold - Warm" "Sweet - Bitter" "Lover - Hater" "Pure - Impure"
 )
 
+# Masculine to Feminine (English to Hindi)
+declare -a masculine_feminine=(
+"Actor - अभिनेत्री" "King - रानी" "Prince - राजकुमारी" "Father - माँ" "Brother - बहन"
+"Husband - पत्नी" "Man - महिला" "Boy - लड़की" "Son - बेटी" "Uncle - आंटी"
+"Grandfather - दादी" "Nephew - भांजी" "Grandson - पोती" "Male - महिला" "Gentleman - महिला"
+"God - देवी" "Hero - हीरोइन" "Host - मेज़बान" "Bridegroom - दुल्हन" "Bachelor - कुंवारी"
+"Father-in-law - सास" "Son-in-law - बहू" "Master - मालकिन" "Lord - देवी" "King - रानी"
+"Emperor - साम्राज्ञी" "Steward - सेविका" "Brahmin - ब्राह्मणी" "Chairman - अध्यक्षा" "Shopkeeper - दुकानदार"
+"Customer - ग्राहक" "Teacher - शिक्षिका" "Doctor - डॉ. महिला" "Scientist - वैज्ञानिक महिला" "Leader - नेतृ"
+"Kingdom - रानी की भूमि" "Politician - महिला नेता" "Warrior - योद्धा महिला" "Scholar - विदुषी" "Writer - लेखिका"
+"Author - लेखिका" "Patriarch - मातृप्रधान" "Partner - सहायक महिला" "Manager - महिला प्रबंधक" "Minister - महिला मंत्री"
+)
+
 # Pots Names (English to Hindi)
 declare -a pots_names=(
 "Flower Pot - फूल का बर्तन" "Clay Pot - मिट्टी का बर्तन" "Terracotta Pot - टेराकोटा बर्तन" "Plastic Pot - प्लास्टिक का बर्तन"
@@ -80,19 +93,16 @@ declare -a vegetables=(
 "Spinach - पालक" "Cauliflower - फूलगोभी" "Cabbage - बंदगोभी" "Peas - मटर" "Pumpkin - कद्दू"
 "Brinjal - बैंगन" "Bottle Gourd - लौकी" "Radish - मूली" "Bitter Gourd - करेला" "Sweet Potato - शकरकंद"
 "Beans - बीन्स" "Lettuce - सलाद" "Garlic - लहसुन" "Ginger - अदरक" "Chili - मिर्च"
-"Okra - भिंडी" "Corn - मक्का" "Mushroom - मशरूम" "Zucchini - तोरी" "Turnip - शलगम"
-"Fenugreek - मेथी" "Asparagus - शतावरी" "Celery - शलरी" "Artichoke - आर्टिचोक" "Beetroot - चुकंदर"
-"Leek - प्याज की किस्म" "Chayote - चायोटे" "Parsnip - पार्सनिप" "Kale - केल" "Chard - चर्ड"
+"Okra - भिंडी" "Corn - मक्का" "Mushroom - मशरूम" "Zucchini - तोरी" "Turnip - शलजम"
 )
 
 # Fruits (English to Hindi)
 declare -a fruits=(
-"Apple - सेब" "Banana - केला" "Orange - संत्रा" "Mango - आम" "Pineapple - अनानास"
-"Watermelon - तरबूज" "Grapes - अंगूर" "Papaya - पपीता" "Pomegranate - अनार" "Guava - अमरूद"
-"Peach - आड़ू" "Plum - आलूबुखारा" "Lychee - लीची" "Strawberry - स्ट्रॉबेरी" "Apricot - खुबानी"
-"Cherry - चेरी" "Melon - खरबूजा" "Blueberry - ब्लूबेरी" "Kiwi - कीवी" "Raspberry - रसभरी"
-"Jackfruit - कटहल" "Dragonfruit - ड्रैगनफ्रूट" "Avocado - एवोकाडो" "Papaw - पपाव" "Date - खजूर"
-"Fig - अंजीर" "Coconut - नारियल" "Cantaloupe - खरबूजा" "Tamarind - इमली" "Lemon - नींबू"
+"Apple - सेब" "Banana - केला" "Mango - आम" "Grapes - अंगूर" "Orange - संतरों"
+"Pineapple - अनानास" "Peach - आड़ू" "Plum - आलूबुखारा" "Watermelon - तरबूज" "Papaya - पपीता"
+"Guava - अमरूद" "Pomegranate - अनार" "Lychee - लीची" "Apricot - खुबानी" "Cherries - चेरी"
+"Strawberry - स्ट्रॉबेरी" "Dragon Fruit - ड्रैगन फ्रूट" "Raspberry - रास्पबेरी" "Blackberry - जामुन"
+"Jackfruit - कटहल" "Coconut - नारियल" "Tamarind - इमली" "Lemon - नींबू"
 "Pear - नाशपाती" "Cranberry - क्रैनबेरी" "Gooseberry - आंवला"
 )
 
@@ -179,8 +189,9 @@ while true; do
     echo "12. View Classroom Things (English to Hindi)"
     echo "13. View Clothes (English to Hindi)"
     echo "14. View Food Grains (English to Hindi)"
-    echo "15. Update Vocabulary List"
-    echo "16. Exit"
+    echo "15. View Masculine to Feminine (English to Hindi)"
+    echo "16. Update Vocabulary List"
+    echo "17. Exit"
 
     read choice
 
@@ -199,7 +210,8 @@ while true; do
         12) display_data classroom_things ;;
         13) display_data clothes ;;
         14) display_data food_grains ;;
-        15)
+        15) display_data masculine_feminine ;;
+        16)
             echo "Choose which list to update:"
             echo "1. Hindi Vocabulary (Opposites)"
             echo "2. English Vocabulary (Opposites)"
@@ -215,6 +227,7 @@ while true; do
             echo "12. Classroom Things (English to Hindi)"
             echo "13. Clothes (English to Hindi)"
             echo "14. Food Grains (English to Hindi)"
+            echo "15. Masculine to Feminine (English to Hindi)"
             read update_choice
             case $update_choice in
                 1) update_list "Hindi Vocabulary (Opposites)" hindi_opposites ;;
@@ -231,11 +244,12 @@ while true; do
                 12) update_list "Classroom Things (English to Hindi)" classroom_things ;;
                 13) update_list "Clothes (English to Hindi)" clothes ;;
                 14) update_list "Food Grains (English to Hindi)" food_grains ;;
+                15) update_list "Masculine to Feminine (English to Hindi)" masculine_feminine ;;
                 *) echo "Invalid choice!" ;;
             esac
             ;;
-        16) echo "Exiting the program. Goodbye!" && break ;;
-        *) echo "Invalid choice. Please try again." ;;
+        17) exit 0 ;;
+        *) echo "Invalid choice! Please try again." ;;
     esac
 done
                 
