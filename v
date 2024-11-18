@@ -119,6 +119,16 @@ declare -a metals=(
 "Antimony - ऐंटिमनी" "Manganese - मैंगनीज" "Bismuth - बिस्मथ" "Tungsten - टंगस्टन" "Rhodium - रोडियम"
 )
 
+# Crops (English to Hindi)
+declare -a crops=(
+"Wheat - गेहूं" "Rice - चावल" "Barley - जौ" "Maize - मक्का" "Sugarcane - गन्ना"
+"Cotton - कपास" "Soybean - सोयाबीन" "Groundnut - मूंगफली" "Pea - मटर" "Mustard - सरसों"
+"Chickpea - चना" "Pulses - दालें" "Lentils - मसूर दाल" "Millets - बाजरा" "Tobacco - तंबाकू"
+"Tea - चाय" "Coffee - कॉफी" "Spices - मसाले" "Jute - जूट" "Sesame - तिल"
+"Coconut - नारियल" "Rubber - रबड़" "Sunflower - सूरजमुखी" "Coriander - धनिया" "Mint - पुदीना"
+"Cardamom - इलायची" "Turmeric - हल्दी" "Ginger - अदरक" "Garlic - लहसुन" "Onion - प्याज"
+)
+
 # Display menus for user
 show_main_menu() {
   clear
@@ -135,7 +145,8 @@ show_main_menu() {
   echo "10. Fruits"
   echo "11. Birds"
   echo "12. Metals"
-  echo "13. Exit"
+  echo "13. Crops"
+  echo "14. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -151,7 +162,8 @@ show_main_menu() {
     10) show_vocabulary "Fruits" "fruits" "fruits" ;;
     11) show_vocabulary "Birds" "birds" "birds" ;;
     12) show_vocabulary "Metals" "metals" "metals" ;;
-    13) exit 0 ;;
+    13) show_vocabulary "Crops" "crops" "crops" ;;
+    14) exit 0 ;;
     *) echo "Invalid option, please try again." ;;
   esac
 }
@@ -175,4 +187,4 @@ show_vocabulary() {
 
 # Run the script
 show_main_menu
-      
+    
