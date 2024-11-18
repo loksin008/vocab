@@ -70,7 +70,6 @@ declare -a pots_names=(
 "Pickling Jar - अचार का मर्तबान" "Planter Pot - पौधे का गमला" "Ash Pot - राख का बर्तन"
 "Candle Pot - मोमबत्ती का बर्तन" "Incense Pot - धूप का बर्तन" "Soup Bowl - सूप कटोरा"
 "Pitcher - सुराही" "Porridge Pot - दलिया का बर्तन" "Steamer Pot - स्टीमर का बर्तन"
-"Salt Pot - नमक का बर्तन" "Rice Cooker Pot - चावल पकाने का बर्तन" "Milk Boiler - दूध का उबालक"
 "Stock Pot - स्टॉक बर्तन"
 )
 
@@ -103,6 +102,19 @@ declare -a body_parts=(
 "Temple - कनपटी" "Ear Lobe - कान का लब"
 )
 
+# Days of the Week (English to Hindi)
+declare -a days=(
+"Monday - सोमवार" "Tuesday - मंगलवार" "Wednesday - बुधवार" "Thursday - गुरुवार" 
+"Friday - शुक्रवार" "Saturday - शनिवार" "Sunday - रविवार"
+)
+
+# Months of the Year (English to Hindi)
+declare -a months=(
+"January - जनवरी" "February - फरवरी" "March - मार्च" "April - अप्रैल"
+"May - मई" "June - जून" "July - जुलाई" "August - अगस्त"
+"September - सितंबर" "October - अक्टूबर" "November - नवंबर" "December - दिसंबर"
+)
+
 # Function to display main menu
 function show_menu() {
     echo "Select an option:"
@@ -111,7 +123,9 @@ function show_menu() {
     echo "3. Pots Names (English to Hindi)"
     echo "4. Flowers (English to Hindi)"
     echo "5. Parts of the Body (English to Hindi)"
-    echo "6. Exit"
+    echo "6. Days of the Week (English to Hindi)"
+    echo "7. Months of the Year (English to Hindi)"
+    echo "8. Exit"
 }
 
 # Function to display data
@@ -149,6 +163,14 @@ while true; do
         display_data "${body_parts[@]}"
         ;;
     6)
+        echo "Days of the Week (English to Hindi):"
+        display_data "${days[@]}"
+        ;;
+    7)
+        echo "Months of the Year (English to Hindi):"
+        display_data "${months[@]}"
+        ;;
+    8)
         echo "Exiting the program. Goodbye!"
         break
         ;;
