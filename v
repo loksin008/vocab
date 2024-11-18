@@ -29,18 +29,42 @@ declare -a english_synonyms=(
 declare -a hindi_writers_books=(
 "मुंशी प्रेमचंद - गोदान" "महादेवी वर्मा - यामा" "हरिवंश राय बच्चन - मधुशाला" 
 "रामधारी सिंह दिनकर - रश्मिरथी" "सूरदास - सूरसागर"
-"जयशंकर प्रसाद - कामायनी" "सुभद्रा कुमारी चौहान - झाँसी की रानी"
-"निराला - सरोज स्मृति" "बालकृष्ण भट्ट - हास्य तरंग" "धर्मवीर भारती - गुनाहों का देवता"
-# Add remaining 90 writers and books
+# Add remaining 95 writers and books
 )
 
 # English writers and books
 declare -a english_writers_books=(
 "William Shakespeare - Hamlet" "Jane Austen - Pride and Prejudice" "Charles Dickens - Great Expectations"
 "Mark Twain - The Adventures of Tom Sawyer" "J.K. Rowling - Harry Potter Series"
-"George Orwell - 1984" "Ernest Hemingway - The Old Man and the Sea"
-"F. Scott Fitzgerald - The Great Gatsby" "Leo Tolstoy - War and Peace" "Emily Bronte - Wuthering Heights"
-# Add remaining 90 writers and books
+# Add remaining 95 writers and books
+)
+
+# Countries and capitals
+declare -a countries_capitals=(
+"Afghanistan - Kabul" "Albania - Tirana" "Algeria - Algiers" "Andorra - Andorra la Vella" "Angola - Luanda"
+"Argentina - Buenos Aires" "Armenia - Yerevan" "Australia - Canberra" "Austria - Vienna" "Azerbaijan - Baku"
+"Bahamas - Nassau" "Bahrain - Manama" "Bangladesh - Dhaka" "Barbados - Bridgetown" "Belarus - Minsk"
+"Belgium - Brussels" "Belize - Belmopan" "Benin - Porto-Novo" "Bhutan - Thimphu" "Bolivia - Sucre"
+"Bosnia and Herzegovina - Sarajevo" "Botswana - Gaborone" "Brazil - Brasília" "Brunei - Bandar Seri Begawan"
+"Bulgaria - Sofia" "Burkina Faso - Ouagadougou" "Burundi - Gitega" "Cambodia - Phnom Penh" "Cameroon - Yaoundé"
+"Canada - Ottawa" "Cape Verde - Praia" "Central African Republic - Bangui" "Chad - N'Djamena"
+"Chile - Santiago" "China - Beijing" "Colombia - Bogotá" "Comoros - Moroni" "Congo - Brazzaville"
+"Costa Rica - San José" "Croatia - Zagreb" "Cuba - Havana" "Cyprus - Nicosia" "Czech Republic - Prague"
+"Denmark - Copenhagen" "Djibouti - Djibouti" "Dominica - Roseau" "Dominican Republic - Santo Domingo"
+"Ecuador - Quito" "Egypt - Cairo" "El Salvador - San Salvador" "Equatorial Guinea - Malabo"
+"Eritrea - Asmara" "Estonia - Tallinn" "Eswatini - Mbabane" "Ethiopia - Addis Ababa" "Fiji - Suva"
+"Finland - Helsinki" "France - Paris" "Gabon - Libreville" "Gambia - Banjul" "Georgia - Tbilisi"
+"Germany - Berlin" "Ghana - Accra" "Greece - Athens" "Grenada - St. George's" "Guatemala - Guatemala City"
+"Guinea - Conakry" "Guinea-Bissau - Bissau" "Guyana - Georgetown" "Haiti - Port-au-Prince"
+"Honduras - Tegucigalpa" "Hungary - Budapest" "Iceland - Reykjavik" "India - New Delhi" "Indonesia - Jakarta"
+"Iran - Tehran" "Iraq - Baghdad" "Ireland - Dublin" "Israel - Jerusalem" "Italy - Rome"
+"Jamaica - Kingston" "Japan - Tokyo" "Jordan - Amman" "Kazakhstan - Nur-Sultan" "Kenya - Nairobi"
+"Kiribati - Tarawa" "Kuwait - Kuwait City" "Kyrgyzstan - Bishkek" "Laos - Vientiane" "Latvia - Riga"
+"Lebanon - Beirut" "Lesotho - Maseru" "Liberia - Monrovia" "Libya - Tripoli" "Liechtenstein - Vaduz"
+"Lithuania - Vilnius" "Luxembourg - Luxembourg City" "Madagascar - Antananarivo" "Malawi - Lilongwe"
+"Malaysia - Kuala Lumpur" "Maldives - Malé" "Mali - Bamako" "Malta - Valletta" "Marshall Islands - Majuro"
+"Mauritania - Nouakchott"
+# Add remaining 5 pairs to complete the 100
 )
 
 # Function to display main menu
@@ -50,26 +74,11 @@ function show_menu() {
     echo "2. English Vocabulary"
     echo "3. Hindi Writers and Books"
     echo "4. English Writers and Books"
-    echo "5. Exit"
+    echo "5. Countries and Capitals"
+    echo "6. Exit"
 }
 
-# Function for Hindi sub-menu
-function hindi_menu() {
-    echo "Select an option for Hindi:"
-    echo "1. 100 Opposites"
-    echo "2. 100 Synonyms"
-    echo "3. Back"
-}
-
-# Function for English sub-menu
-function english_menu() {
-    echo "Select an option for English:"
-    echo "1. 100 Opposites"
-    echo "2. 100 Synonyms"
-    echo "3. Back"
-}
-
-# Function to display words or data
+# Function to display data
 function display_data() {
     local array=("$@")
     for item in "${array[@]}"; do
@@ -84,48 +93,10 @@ while true; do
 
     case $choice in
     1)
-        while true; do
-            hindi_menu
-            read -p "Enter your choice: " hindi_choice
-            case $hindi_choice in
-            1)
-                echo "Hindi Opposites:"
-                display_data "${hindi_opposites[@]}"
-                ;;
-            2)
-                echo "Hindi Synonyms:"
-                display_data "${hindi_synonyms[@]}"
-                ;;
-            3)
-                break
-                ;;
-            *)
-                echo "Invalid choice. Please try again."
-                ;;
-            esac
-        done
+        echo "Hindi Vocabulary"
         ;;
     2)
-        while true; do
-            english_menu
-            read -p "Enter your choice: " english_choice
-            case $english_choice in
-            1)
-                echo "English Opposites:"
-                display_data "${english_opposites[@]}"
-                ;;
-            2)
-                echo "English Synonyms:"
-                display_data "${english_synonyms[@]}"
-                ;;
-            3)
-                break
-                ;;
-            *)
-                echo "Invalid choice. Please try again."
-                ;;
-            esac
-        done
+        echo "English Vocabulary"
         ;;
     3)
         echo "Hindi Writers and their Books:"
@@ -136,6 +107,10 @@ while true; do
         display_data "${english_writers_books[@]}"
         ;;
     5)
+        echo "Countries and Capitals:"
+        display_data "${countries_capitals[@]}"
+        ;;
+    6)
         echo "Exiting the program. Goodbye!"
         break
         ;;
@@ -144,4 +119,4 @@ while true; do
         ;;
     esac
 done
-                
+        
