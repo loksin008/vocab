@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Vocabulary Data
+# Vocabulary data
 
 # Opposites
 declare -a hindi_opposites=(
@@ -14,70 +14,68 @@ declare -a english_opposites=(
 
 # Masculine to Feminine
 declare -a masculine_feminine=(
-"बेटा - बेटी" "पिता - माता" "राजा - रानी" "गुरु - गुरुमाता" "नायक - नायिका"
+"Boy - Girl" "King - Queen" "Lion - Lioness" "Actor - Actress" "Man - Woman"
+"Father - Mother" "Brother - Sister" "Husband - Wife" "Son - Daughter" "Prince - Princess"
 )
 
 # Pots Names
 declare -a pots_names=(
-"घड़ा - Pitcher" "लोटा - Small Pot" "कुल्हड़ - Clay Cup" "मटका - Earthen Pot" "बाल्टी - Bucket"
+"कुल्हड़ - Kulhad" "घड़ा - Ghada" "मटका - Matka" "सुराही - Surahi" "हंडा - Handa"
 )
 
 # Flowers
 declare -a flowers=(
-"गुलाब - Rose" "कमल - Lotus" "चमेली - Jasmine" "सूरजमुखी - Sunflower" "गेंदे का फूल - Marigold"
+"Rose - गुलाब" "Lotus - कमल" "Marigold - गेंदा" "Jasmine - चमेली" "Hibiscus - गुड़हल"
 )
 
 # Body Parts
 declare -a body_parts=(
-"सिर - Head" "आंखें - Eyes" "नाक - Nose" "कान - Ears" "हाथ - Hands"
-"पैर - Feet" "दिल - Heart" "मुँह - Mouth" "बाल - Hair" "दांत - Teeth"
+"Hand - हाथ" "Leg - पैर" "Head - सिर" "Eye - आँख" "Ear - कान"
+"Nose - नाक" "Mouth - मुँह" "Fingers - उंगलियाँ" "Stomach - पेट" "Heart - हृदय"
 )
 
 # Days of the Week
 declare -a days=(
-"सोमवार - Monday" "मंगलवार - Tuesday" "बुधवार - Wednesday" "गुरुवार - Thursday" "शुक्रवार - Friday"
-"शनिवार - Saturday" "रविवार - Sunday"
+"Sunday - रविवार" "Monday - सोमवार" "Tuesday - मंगलवार" "Wednesday - बुधवार" 
+"Thursday - गुरुवार" "Friday - शुक्रवार" "Saturday - शनिवार"
 )
 
 # Months of the Year
 declare -a months=(
-"जनवरी - January" "फरवरी - February" "मार्च - March" "अप्रैल - April" "मई - May"
-"जून - June" "जुलाई - July" "अगस्त - August" "सितंबर - September" "अक्टूबर - October"
-"नवंबर - November" "दिसंबर - December"
+"January - जनवरी" "February - फरवरी" "March - मार्च" "April - अप्रैल" 
+"May - मई" "June - जून" "July - जुलाई" "August - अगस्त" 
+"September - सितंबर" "October - अक्टूबर" "November - नवंबर" "December - दिसंबर"
 )
 
 # Colors
 declare -a colors=(
-"लाल - Red" "नीला - Blue" "हरा - Green" "पीला - Yellow" "सफेद - White"
-"काला - Black" "गुलाबी - Pink" "भूरा - Brown" "बैंगनी - Purple" "नारंगी - Orange"
+"Red - लाल" "Blue - नीला" "Green - हरा" "Yellow - पीला" "White - सफेद"
+"Black - काला" "Pink - गुलाबी" "Orange - नारंगी" "Purple - बैंगनी" "Brown - भूरा"
 )
 
 # Vegetables
 declare -a vegetables=(
-"आलू - Potato" "प्याज - Onion" "टमाटर - Tomato" "गाजर - Carrot" "मटर - Peas"
-"बैंगन - Brinjal" "लौकी - Bottle Gourd" "कद्दू - Pumpkin" "पालक - Spinach" "मूली - Radish"
+"Potato - आलू" "Tomato - टमाटर" "Onion - प्याज" "Carrot - गाजर" "Spinach - पालक"
 )
 
 # Fruits
 declare -a fruits=(
-"सेब - Apple" "केला - Banana" "आम - Mango" "संतरा - Orange" "अनार - Pomegranate"
-"अंगूर - Grapes" "पपीता - Papaya" "नाशपाती - Pear" "तरबूज - Watermelon" "अमरूद - Guava"
+"Apple - सेब" "Banana - केला" "Mango - आम" "Orange - संतरा" "Grapes - अंगूर"
 )
 
 # Birds
 declare -a birds=(
-"तोता - Parrot" "कबूतर - Pigeon" "मुर्गी - Hen" "मोर - Peacock" "बुलबुल - Nightingale"
-"गौरैया - Sparrow" "बाज - Hawk" "कौआ - Crow" "हंस - Swan" "पंखी - Bird"
+"Sparrow - गौरेया" "Crow - कौआ" "Peacock - मोर" "Parrot - तोता" "Pigeon - कबूतर"
 )
 
 # Metals
 declare -a metals=(
-"सोना - Gold" "चांदी - Silver" "लोहा - Iron" "तांबा - Copper" "पीतल - Brass"
+"Gold - सोना" "Silver - चांदी" "Iron - लोहा" "Copper - तांबा" "Aluminum - एल्युमिनियम"
 )
 
 # Crops
 declare -a crops=(
-"गेहूं - Wheat" "धान - Rice" "मक्का - Maize" "जौ - Barley" "गन्ना - Sugarcane"
+"Wheat - गेहूं" "Rice - चावल" "Corn - मक्का" "Sugarcane - गन्ना" "Cotton - कपास"
 )
 
 # Verbs
@@ -141,5 +139,13 @@ show_vocabulary() {
   echo "$category"
   eval "english_list=( \${$english_array[@]} )"
   eval "hindi_list=( \${$hindi_array[@]} )"
-  for i in "${
+  for i in "${!english_list[@]}"; do
+    echo "${english_list[$i]} - ${hindi_list[$i]}"
+  done
+  read -p "Press any key to return to the main menu..." anykey
+  show_main_menu
+}
+
+# Run the script
+show_main_menu
     
