@@ -70,12 +70,11 @@ show_main_menu() {
 # Function to display the vocabulary list
 show_vocabulary() {
   local category=$1
-  local english_array=$2
-  local hindi_array=$3
+  local array_name=$2
 
   clear
   echo "$category"
-  eval "list=( \${$english_array[@]} )"
+  eval "list=( \${$array_name[@]} )"
   for item in "${list[@]}"; do
     echo "$item"
   done
