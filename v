@@ -34,7 +34,15 @@ declare -a medicinal_plants=(
 "Indian Gooseberry (Amla) - आंवला" "Sandalwood - चंदन" "Clove - लौंग" "Cinnamon - दालचीनी" "Fennel - सौंफ"
 "Holy Basil - पवित्र तुलसी" "Lemongrass - नींबू घास" "Black Pepper - काली मिर्च" "Cardamom - इलायची" "Garlic - लहसुन"
 "Ginger - अदरक" "Onion - प्याज" "Curry Leaves - कड़ी पत्ता" "Betel Leaves - पान" "Chamomile - कैमोमाइल"
-"Rosemary - गुलमेहंदी" "Thyme - अजवायन" "Saffron - केसर" "Hibiscus - गुड़हल" "Bay Leaf - तेजपत्ता"
+)
+
+# Plants that Provide Oxygen 24 Hours (English to Hindi)
+declare -a oxygen_plants=(
+"Areca Palm - अरेका पाम" "Snake Plant - स्नेक प्लांट" "Tulsi - तुलसी" "Neem - नीम" "Aloe Vera - घृतकुमारी"
+"Peepal Tree - पीपल का पेड़" "Christmas Cactus - क्रिसमस कैक्टस" "Orchid - ऑर्किड" "Money Plant - मनी प्लांट"
+"Rubber Plant - रबर प्लांट" "Spider Plant - स्पाइडर प्लांट" "Banyan Tree - बरगद का पेड़" "Gerbera Daisy - गेंदा डेज़ी"
+"Chinese Evergreen - चाइनीज एवरग्रीन" "Sacred Fig - बरगद का पवित्र पेड़" "Corn Plant - कॉर्न प्लांट"
+"Cactus - कैक्टस" "Ficus Plant - फिकस प्लांट" "Banana Plant - केले का पेड़" "Pine Tree - देवदार"
 )
 
 # Other categories (dummy data placeholders for now)
@@ -79,7 +87,8 @@ show_main_menu() {
   echo "13. Crops"
   echo "14. Verbs"
   echo "15. Medicinal Plants"
-  echo "16. Exit"
+  echo "16. Plants that Provide Oxygen 24 Hours"
+  echo "17. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -98,7 +107,8 @@ show_main_menu() {
     13) show_vocabulary "Crops" "crops" "crops" ;;
     14) show_vocabulary "Verbs" "verbs" "verbs" ;;
     15) show_vocabulary "Medicinal Plants" "medicinal_plants" "medicinal_plants" ;;
-    16) exit 0 ;;
+    16) show_vocabulary "Plants that Provide Oxygen 24 Hours" "oxygen_plants" "oxygen_plants" ;;
+    17) exit 0 ;;
     *) echo "Invalid option, please try again." ;;
   esac
 }
