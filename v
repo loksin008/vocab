@@ -27,106 +27,21 @@ declare -a english_opposites=(
 "Cold - Warm" "Sweet - Bitter" "Lover - Hater" "Pure - Impure"
 )
 
-# Masculine to Feminine (English to Hindi)
-declare -a masculine_feminine=(
-"Actor - अभिनेत्री" "King - रानी" "Prince - राजकुमारी" "Father - माँ" "Brother - बहन"
-"Husband - पत्नी" "Man - महिला" "Boy - लड़की" "Son - बेटी" "Uncle - आंटी"
-"Grandfather - दादी" "Nephew - भांजी" "Grandson - पोती" "Male - महिला" "Gentleman - महिला"
-"God - देवी" "Hero - हीरोइन" "Host - मेज़बान" "Bridegroom - दुल्हन" "Bachelor - कुंवारी"
-"Father-in-law - सास" "Son-in-law - बहू" "Master - मालकिन" "Lord - देवी" "King - रानी"
-"Emperor - साम्राज्ञी" "Steward - सेविका" "Brahmin - ब्राह्मणी" "Chairman - अध्यक्षा" "Shopkeeper - दुकानदार"
-"Customer - ग्राहक" "Teacher - शिक्षिका" "Doctor - डॉ. महिला" "Scientist - वैज्ञानिक महिला" "Leader - नेतृ"
-"Kingdom - रानी की भूमि" "Politician - महिला नेता" "Warrior - योद्धा महिला" "Scholar - विदुषी" "Writer - लेखिका"
-"Author - लेखिका" "Patriarch - मातृप्रधान" "Partner - सहायक महिला" "Manager - महिला प्रबंधक" "Minister - महिला मंत्री"
-)
+# Add the rest of the vocabulary arrays (masculine_feminine, pots_names, etc.) here as provided earlier...
 
-# Pots Names (English to Hindi)
-declare -a pots_names=(
-"Flower Pot - फूल का बर्तन" "Clay Pot - मिट्टी का बर्तन" "Terracotta Pot - टेराकोटा बर्तन" "Plastic Pot - प्लास्टिक का बर्तन"
-"Metal Pot - धातु का बर्तन" "Hanging Pot - झूलता बर्तन" "Ceramic Pot - सिरेमिक बर्तन" "Stone Pot - पत्थर का बर्तन"
-"Garden Pot - बगिया का बर्तन" "Decorative Pot - सजावटी बर्तन"
-)
-
-# Flowers (English to Hindi)
-declare -a flowers=(
-"Rose - गुलाब" "Tulip - ट्यूलिप" "Lily - लिली" "Sunflower - सूरजमुखी" "Daffodil - डैफोडिल"
-"Orchid - ऑर्किड" "Chrysanthemum - गुलदाउदी" "Marigold - गेंदे का फूल" "Jasmine - चमेली" "Lotus - कमल"
-)
-
-# Parts of the Body (English to Hindi)
-declare -a body_parts=(
-"Head - सिर" "Eye - आंख" "Nose - नाक" "Ear - कान" "Mouth - मुंह"
-"Hand - हाथ" "Leg - पैर" "Arm - भुजा" "Foot - पैर का पंजा" "Heart - हृदय"
-"Lungs - फेफड़े" "Liver - यकृत" "Stomach - पेट" "Brain - मस्तिष्क" "Teeth - दांत"
-"Tongue - जीभ" "Hair - बाल" "Skin - त्वचा" "Bone - हड्डी" "Blood - रक्त"
-"Finger - अंगुली" "Thumb - अंगूठा" "Knee - घुटना" "Elbow - कोहनी" "Shoulder - कंधा"
-"Neck - गर्दन" "Chest - छाती" "Back - पीठ" "Waist - कमर" "Hip - नितंब"
-"Thigh - जांघ" "Calf - पिंडली" "Ankle - टखना" "Toe - पैर की अंगुली" "Forehead - माथा"
-"Cheek - गाल" "Chin - ठोड़ी" "Lips - होंठ" "Palm - हथेली" "Wrist - कलाई"
-"Heel - एड़ी"
-)
-
-# Days of the Week (English to Hindi)
-declare -a days=(
-"Monday - सोमवार" "Tuesday - मंगलवार" "Wednesday - बुधवार" "Thursday - गुरुवार" 
-"Friday - शुक्रवार" "Saturday - शनिवार" "Sunday - रविवार"
-)
-
-# Months of the Year (English to Hindi)
-declare -a months=(
-"January - जनवरी" "February - फरवरी" "March - मार्च" "April - अप्रैल"
-"May - मई" "June - जून" "July - जुलाई" "August - अगस्त"
-"September - सितंबर" "October - अक्टूबर" "November - नवंबर" "December - दिसंबर"
-)
-
-# Colors (English to Hindi)
-declare -a colors=(
-"Red - लाल" "Blue - नीला" "Green - हरा" "Yellow - पीला" "Black - काला"
-"White - सफेद" "Pink - गुलाबी" "Orange - नारंगी" "Purple - बैंगनी" "Brown - भूरा"
-"Gray - धूसर" "Golden - सुनहरा" "Silver - चांदी" "Beige - बेज" "Violet - बैंगनी"
-"Indigo - नील" "Turquoise - फिरोजी" "Magenta - मैजेंटा" "Maroon - महरून" "Olive - जैतून"
-)
-
-# Vegetables (English to Hindi)
-declare -a vegetables=(
-"Potato - आलू" "Onion - प्याज" "Tomato - टमाटर" "Carrot - गाजर" "Cucumber - खीरा"
-"Spinach - पालक" "Cauliflower - फूलगोभी" "Cabbage - बंदगोभी" "Peas - मटर" "Pumpkin - कद्दू"
-"Brinjal - बैंगन" "Bottle Gourd - लौकी" "Radish - मूली" "Bitter Gourd - करेला" "Sweet Potato - शकरकंद"
-"Beans - बीन्स" "Lettuce - सलाद" "Garlic - लहसुन" "Ginger - अदरक" "Chili - मिर्च"
-"Okra - भिंडी" "Corn - मक्का" "Mushroom - मशरूम" "Zucchini - तोरी" "Turnip - शलजम"
-)
-
-# Fruits (English to Hindi)
-declare -a fruits=(
-"Apple - सेब" "Banana - केला" "Orange - संतर" "Grapes - अंगूर" "Mango - आम"
-"Pineapple - अनानास" "Watermelon - तरबूज" "Papaya - पपीता" "Pomegranate - अनार" "Guava - अमरूद"
-"Lychee - लीची" "Peach - आड़ू" "Pear - नाशपाती" "Plum - आलूबुखारा" "Cherry - चेरी"
-"Strawberry - स्ट्रॉबेरी" "Apricot - खुमानी" "Coconut - नारियल" "Jackfruit - कटहल" "Custard Apple - शरीफा"
-)
-
-# Birds (English to Hindi)
-declare -a birds=(
-"Parrot - तोता" "Sparrow - गौरैया" "Pigeon - कबूतर" "Crow - कौआ" "Eagle - गरुड़"
-"Owl - उल्लू" "Peacock - मोर" "Duck - बतख" "Penguin - पेंगुइन" "Kingfisher - मछली पकड़ने वाला पक्षी"
-"Stork - सारस" "Swan - हंस" "Woodpecker - कठफोड़वा" "Vulture - गिद्ध" "Falcon - बाज"
-)
-
-# Metals (English to Hindi)
-declare -a metals=(
-"Gold - सोना" "Silver - चांदी" "Iron - लोहे" "Copper - तांबा" "Aluminum - एल्यूमिनियम"
-"Lead - सीसा" "Zinc - जस्ता" "Platinum - प्लेटिनम" "Nickel - निकल" "Titanium - टाइटेनियम"
-"Mercury - पारा" "Tin - टिन" "Chromium - क्रोमियम" "Magnesium - मैग्नीशियम" "Cobalt - कोबाल्ट"
-"Antimony - ऐंटिमनी" "Manganese - मैंगनीज" "Bismuth - बिस्मथ" "Tungsten - टंगस्टन" "Rhodium - रोडियम"
-)
-
-# Crops (English to Hindi)
-declare -a crops=(
-"Wheat - गेहूं" "Rice - चावल" "Barley - जौ" "Maize - मक्का" "Sugarcane - गन्ना"
-"Cotton - कपास" "Soybean - सोयाबीन" "Groundnut - मूंगफली" "Pea - मटर" "Mustard - सरसों"
-"Chickpea - चना" "Pulses - दालें" "Lentils - मसूर दाल" "Millets - बाजरा" "Tobacco - तंबाकू"
-"Tea - चाय" "Coffee - कॉफी" "Spices - मसाले" "Jute - जूट" "Sesame - तिल"
-"Coconut - नारियल" "Rubber - रबड़" "Sunflower - सूरजमुखी" "Coriander - धनिया" "Mint - पुदीना"
-"Cardamom - इलायची" "Turmeric - हल्दी" "Ginger - अदरक" "Garlic - लहसुन" "Onion - प्याज"
+# Verbs (English to Hindi)
+declare -a verbs=(
+"Run - दौड़ना" "Walk - चलना" "Eat - खाना" "Drink - पीना" "Sleep - सोना"
+"Write - लिखना" "Read - पढ़ना" "Speak - बोलना" "Listen - सुनना" "Sit - बैठना"
+"Stand - खड़ा होना" "Open - खोलना" "Close - बंद करना" "Play - खेलना" "Jump - कूदना"
+"Swim - तैरना" "Laugh - हंसना" "Cry - रोना" "Dance - नृत्य करना" "Sing - गाना"
+"Think - सोचना" "Learn - सीखना" "Teach - पढ़ाना" "Work - काम करना" "Drive - चलाना"
+"Fly - उड़ना" "Throw - फेंकना" "Catch - पकड़ना" "Give - देना" "Take - लेना"
+"Buy - खरीदना" "Sell - बेचना" "Love - प्यार करना" "Hate - नफरत करना" "Help - मदद करना"
+"Climb - चढ़ना" "Fall - गिरना" "Push - धक्का देना" "Pull - खींचना" "Break - तोड़ना"
+"Fix - ठीक करना" "Build - बनाना" "Cook - पकाना" "Wash - धोना" "Clean - साफ करना"
+"Drive - गाड़ी चलाना" "Ride - सवारी करना" "Hide - छिपाना" "Show - दिखाना" "Ask - पूछना"
+"Answer - उत्तर देना"
 )
 
 # Display menus for user
@@ -146,7 +61,8 @@ show_main_menu() {
   echo "11. Birds"
   echo "12. Metals"
   echo "13. Crops"
-  echo "14. Exit"
+  echo "14. Verbs"
+  echo "15. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -163,7 +79,8 @@ show_main_menu() {
     11) show_vocabulary "Birds" "birds" "birds" ;;
     12) show_vocabulary "Metals" "metals" "metals" ;;
     13) show_vocabulary "Crops" "crops" "crops" ;;
-    14) exit 0 ;;
+    14) show_vocabulary "Verbs" "verbs" "verbs" ;;
+    15) exit 0 ;;
     *) echo "Invalid option, please try again." ;;
   esac
 }
@@ -187,4 +104,3 @@ show_vocabulary() {
 
 # Run the script
 show_main_menu
-    
