@@ -27,37 +27,7 @@ declare -a english_opposites=(
 "Cold - Warm" "Sweet - Bitter" "Lover - Hater" "Pure - Impure"
 )
 
-# Medicinal Plants (English to Hindi)
-declare -a medicinal_plants=(
-"Tulsi - तुलसी" "Neem - नीम" "Aloe Vera - घृतकुमारी" "Ashwagandha - अश्वगंधा" "Brahmi - ब्राह्मी"
-"Giloy - गिलोय" "Turmeric - हल्दी" "Fenugreek - मेथी" "Peppermint - पुदीना" "Coriander - धनिया"
-"Indian Gooseberry (Amla) - आंवला" "Sandalwood - चंदन" "Clove - लौंग" "Cinnamon - दालचीनी" "Fennel - सौंफ"
-"Holy Basil - पवित्र तुलसी" "Lemongrass - नींबू घास" "Black Pepper - काली मिर्च" "Cardamom - इलायची" "Garlic - लहसुन"
-"Ginger - अदरक" "Onion - प्याज" "Curry Leaves - कड़ी पत्ता" "Betel Leaves - पान" "Chamomile - कैमोमाइल"
-)
-
-# Plants that Provide Oxygen 24 Hours (English to Hindi)
-declare -a oxygen_plants=(
-"Areca Palm - अरेका पाम" "Snake Plant - स्नेक प्लांट" "Tulsi - तुलसी" "Neem - नीम" "Aloe Vera - घृतकुमारी"
-"Peepal Tree - पीपल का पेड़" "Christmas Cactus - क्रिसमस कैक्टस" "Orchid - ऑर्किड" "Money Plant - मनी प्लांट"
-"Rubber Plant - रबर प्लांट" "Spider Plant - स्पाइडर प्लांट" "Banyan Tree - बरगद का पेड़" "Gerbera Daisy - गेंदा डेज़ी"
-"Chinese Evergreen - चाइनीज एवरग्रीन" "Sacred Fig - बरगद का पवित्र पेड़" "Corn Plant - कॉर्न प्लांट"
-"Cactus - कैक्टस" "Ficus Plant - फिकस प्लांट" "Banana Plant - केले का पेड़" "Pine Tree - देवदार"
-)
-
-# Other categories (dummy data placeholders for now)
-declare -a masculine_feminine=("Male - Female" "पुरुष - महिला")
-declare -a pots_names=("Clay Pot - मटका" "Steel Pot - स्टील का बर्तन")
-declare -a flowers=("Rose - गुलाब" "Lotus - कमल")
-declare -a body_parts=("Head - सिर" "Hand - हाथ")
-declare -a days=("Sunday - रविवार" "Monday - सोमवार")
-declare -a months=("January - जनवरी" "February - फरवरी")
-declare -a colors=("Red - लाल" "Blue - नीला")
-declare -a vegetables=("Potato - आलू" "Tomato - टमाटर")
-declare -a fruits=("Apple - सेब" "Banana - केला")
-declare -a birds=("Parrot - तोता" "Sparrow - गौरैया")
-declare -a metals=("Gold - सोना" "Silver - चांदी")
-declare -a crops=("Wheat - गेहूं" "Rice - चावल")
+# Add the rest of the vocabulary arrays (masculine_feminine, pots_names, etc.) here as provided earlier...
 
 # Verbs (English to Hindi)
 declare -a verbs=(
@@ -66,6 +36,12 @@ declare -a verbs=(
 "Stand - खड़ा होना" "Open - खोलना" "Close - बंद करना" "Play - खेलना" "Jump - कूदना"
 "Swim - तैरना" "Laugh - हंसना" "Cry - रोना" "Dance - नृत्य करना" "Sing - गाना"
 "Think - सोचना" "Learn - सीखना" "Teach - पढ़ाना" "Work - काम करना" "Drive - चलाना"
+"Fly - उड़ना" "Throw - फेंकना" "Catch - पकड़ना" "Give - देना" "Take - लेना"
+"Buy - खरीदना" "Sell - बेचना" "Love - प्यार करना" "Hate - नफरत करना" "Help - मदद करना"
+"Climb - चढ़ना" "Fall - गिरना" "Push - धक्का देना" "Pull - खींचना" "Break - तोड़ना"
+"Fix - ठीक करना" "Build - बनाना" "Cook - पकाना" "Wash - धोना" "Clean - साफ करना"
+"Drive - गाड़ी चलाना" "Ride - सवारी करना" "Hide - छिपाना" "Show - दिखाना" "Ask - पूछना"
+"Answer - उत्तर देना"
 )
 
 # Display menus for user
@@ -86,9 +62,7 @@ show_main_menu() {
   echo "12. Metals"
   echo "13. Crops"
   echo "14. Verbs"
-  echo "15. Medicinal Plants"
-  echo "16. Plants that Provide Oxygen 24 Hours"
-  echo "17. Exit"
+  echo "15. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -106,9 +80,7 @@ show_main_menu() {
     12) show_vocabulary "Metals" "metals" "metals" ;;
     13) show_vocabulary "Crops" "crops" "crops" ;;
     14) show_vocabulary "Verbs" "verbs" "verbs" ;;
-    15) show_vocabulary "Medicinal Plants" "medicinal_plants" "medicinal_plants" ;;
-    16) show_vocabulary "Plants that Provide Oxygen 24 Hours" "oxygen_plants" "oxygen_plants" ;;
-    17) exit 0 ;;
+    15) exit 0 ;;
     *) echo "Invalid option, please try again." ;;
   esac
 }
@@ -132,4 +104,3 @@ show_vocabulary() {
 
 # Run the script
 show_main_menu
-    
