@@ -1,47 +1,89 @@
 #!/bin/bash
 
-# Vocabulary data
+# Vocabulary Data
+
+# Opposites
 declare -a hindi_opposites=(
 "अच्छा - बुरा" "बड़ा - छोटा" "खुश - दुखी" "सुंदर - कुरूप" "तेज़ - धीमा"
 "शांत - शोर" "धन - गरीबी" "उज्ज्वल - अंधकार" "जीवन - मृत्यु" "सच - झूठ"
-"सूरज - चाँद" "आग - पानी" "प्रेम - नफरत" "नया - पुराना" "प्रकाश - अंधेरा"
-"आसान - कठिन" "दिन - रात" "प्यार - घृणा" "स्वास्थ्य - बीमारी" "शांति - युद्ध"
-"जीत - हार" "अमीर - गरीब" "धनी - निर्धन" "दोस्त - दुश्मन" "स्वर्ग - नरक"
-"खुशबू - बदबू" "लंबा - छोटा" "मजबूत - कमजोर" "ठंडा - गरम" "शक्ति - कमजोरी"
-"सपना - हकीकत" "सकारात्मक - नकारात्मक" "बाहर - अंदर" "उजाला - अंधेरा" "धूप - छाँव"
-"सच - झूठ" "पहाड़ - घाटी" "जल्दी - देरी" "उच्च - निम्न" "लाभ - हानि"
-"शक्ति - दुर्बलता" "स्वच्छ - गंदा" "कठिन - सरल" "जन्म - मृत्यु" "बुद्धिमान - मूर्ख"
-"सर्दी - गर्मी" "मधुर - कड़वा" "प्रेमी - घृणास्पद" "निर्मल - अशांत" "शुद्ध - अशुद्ध"
 )
-
 declare -a english_opposites=(
 "Good - Bad" "Big - Small" "Happy - Sad" "Beautiful - Ugly" "Fast - Slow"
 "Quiet - Noisy" "Rich - Poor" "Bright - Dark" "Life - Death" "True - False"
-"Sun - Moon" "Fire - Water" "Love - Hate" "New - Old" "Light - Darkness"
-"Easy - Hard" "Day - Night" "Love - Hate" "Health - Illness" "Peace - War"
-"Win - Lose" "Rich - Poor" "Wealthy - Poor" "Friend - Enemy" "Heaven - Hell"
-"Sweet - Sour" "Tall - Short" "Strong - Weak" "Cold - Hot" "Power - Weakness"
-"Dream - Reality" "Positive - Negative" "Outside - Inside" "Light - Dark" "Sunshine - Shade"
-"True - False" "Mountain - Valley" "Early - Late" "High - Low" "Profit - Loss"
-"Strength - Weakness" "Clean - Dirty" "Hard - Soft" "Birth - Death" "Wise - Foolish"
-"Cold - Warm" "Sweet - Bitter" "Lover - Hater" "Pure - Impure"
 )
 
-# Add the rest of the vocabulary arrays (masculine_feminine, pots_names, etc.) here as provided earlier...
+# Masculine to Feminine
+declare -a masculine_feminine=(
+"बेटा - बेटी" "पिता - माता" "राजा - रानी" "गुरु - गुरुमाता" "नायक - नायिका"
+)
 
-# Verbs (English to Hindi)
+# Pots Names
+declare -a pots_names=(
+"घड़ा - Pitcher" "लोटा - Small Pot" "कुल्हड़ - Clay Cup" "मटका - Earthen Pot" "बाल्टी - Bucket"
+)
+
+# Flowers
+declare -a flowers=(
+"गुलाब - Rose" "कमल - Lotus" "चमेली - Jasmine" "सूरजमुखी - Sunflower" "गेंदे का फूल - Marigold"
+)
+
+# Body Parts
+declare -a body_parts=(
+"सिर - Head" "आंखें - Eyes" "नाक - Nose" "कान - Ears" "हाथ - Hands"
+"पैर - Feet" "दिल - Heart" "मुँह - Mouth" "बाल - Hair" "दांत - Teeth"
+)
+
+# Days of the Week
+declare -a days=(
+"सोमवार - Monday" "मंगलवार - Tuesday" "बुधवार - Wednesday" "गुरुवार - Thursday" "शुक्रवार - Friday"
+"शनिवार - Saturday" "रविवार - Sunday"
+)
+
+# Months of the Year
+declare -a months=(
+"जनवरी - January" "फरवरी - February" "मार्च - March" "अप्रैल - April" "मई - May"
+"जून - June" "जुलाई - July" "अगस्त - August" "सितंबर - September" "अक्टूबर - October"
+"नवंबर - November" "दिसंबर - December"
+)
+
+# Colors
+declare -a colors=(
+"लाल - Red" "नीला - Blue" "हरा - Green" "पीला - Yellow" "सफेद - White"
+"काला - Black" "गुलाबी - Pink" "भूरा - Brown" "बैंगनी - Purple" "नारंगी - Orange"
+)
+
+# Vegetables
+declare -a vegetables=(
+"आलू - Potato" "प्याज - Onion" "टमाटर - Tomato" "गाजर - Carrot" "मटर - Peas"
+"बैंगन - Brinjal" "लौकी - Bottle Gourd" "कद्दू - Pumpkin" "पालक - Spinach" "मूली - Radish"
+)
+
+# Fruits
+declare -a fruits=(
+"सेब - Apple" "केला - Banana" "आम - Mango" "संतरा - Orange" "अनार - Pomegranate"
+"अंगूर - Grapes" "पपीता - Papaya" "नाशपाती - Pear" "तरबूज - Watermelon" "अमरूद - Guava"
+)
+
+# Birds
+declare -a birds=(
+"तोता - Parrot" "कबूतर - Pigeon" "मुर्गी - Hen" "मोर - Peacock" "बुलबुल - Nightingale"
+"गौरैया - Sparrow" "बाज - Hawk" "कौआ - Crow" "हंस - Swan" "पंखी - Bird"
+)
+
+# Metals
+declare -a metals=(
+"सोना - Gold" "चांदी - Silver" "लोहा - Iron" "तांबा - Copper" "पीतल - Brass"
+)
+
+# Crops
+declare -a crops=(
+"गेहूं - Wheat" "धान - Rice" "मक्का - Maize" "जौ - Barley" "गन्ना - Sugarcane"
+)
+
+# Verbs
 declare -a verbs=(
 "Run - दौड़ना" "Walk - चलना" "Eat - खाना" "Drink - पीना" "Sleep - सोना"
 "Write - लिखना" "Read - पढ़ना" "Speak - बोलना" "Listen - सुनना" "Sit - बैठना"
-"Stand - खड़ा होना" "Open - खोलना" "Close - बंद करना" "Play - खेलना" "Jump - कूदना"
-"Swim - तैरना" "Laugh - हंसना" "Cry - रोना" "Dance - नृत्य करना" "Sing - गाना"
-"Think - सोचना" "Learn - सीखना" "Teach - पढ़ाना" "Work - काम करना" "Drive - चलाना"
-"Fly - उड़ना" "Throw - फेंकना" "Catch - पकड़ना" "Give - देना" "Take - लेना"
-"Buy - खरीदना" "Sell - बेचना" "Love - प्यार करना" "Hate - नफरत करना" "Help - मदद करना"
-"Climb - चढ़ना" "Fall - गिरना" "Push - धक्का देना" "Pull - खींचना" "Break - तोड़ना"
-"Fix - ठीक करना" "Build - बनाना" "Cook - पकाना" "Wash - धोना" "Clean - साफ करना"
-"Drive - गाड़ी चलाना" "Ride - सवारी करना" "Hide - छिपाना" "Show - दिखाना" "Ask - पूछना"
-"Answer - उत्तर देना"
 )
 
 # Display menus for user
@@ -81,7 +123,11 @@ show_main_menu() {
     13) show_vocabulary "Crops" "crops" "crops" ;;
     14) show_vocabulary "Verbs" "verbs" "verbs" ;;
     15) exit 0 ;;
-    *) echo "Invalid option, please try again." ;;
+    *) 
+      echo "Invalid option, please try again."
+      read -p "Press any key to return to the main menu..." anykey
+      show_main_menu
+      ;;
   esac
 }
 
@@ -95,12 +141,5 @@ show_vocabulary() {
   echo "$category"
   eval "english_list=( \${$english_array[@]} )"
   eval "hindi_list=( \${$hindi_array[@]} )"
-  for i in "${!english_list[@]}"; do
-    echo "${english_list[$i]} - ${hindi_list[$i]}"
-  done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
-}
-
-# Run the script
-show_main_menu
+  for i in "${
+    
