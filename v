@@ -4,36 +4,42 @@
 declare -a hindi_opposites=( ... ) # Predefined opposites
 declare -a english_opposites=( ... ) # Predefined opposites
 declare -a verbs=( ... ) # Predefined verbs
-declare -a birds=( ... ) # Predefined birds
-declare -a solar_family=( ... ) # Solar family
-declare -a national_symbols=( ... ) # National symbols
 
-# 24-Hour Oxygen-Giving Plants (English to Hindi)
-declare -a oxygen_plants=(
-  "Areca Palm - अरेका पाम"
-  "Snake Plant - सर्प पौधा"
-  "Neem - नीम"
-  "Tulsi - तुलसी"
-  "Aloe Vera - एलोवेरा"
-  "Peepal Tree - पीपल"
-  "Banyan Tree - बरगद"
-  "Money Plant - मनी प्लांट"
-  "Spider Plant - स्पाइडर प्लांट"
-  "Chinese Evergreen - चाइनीज एवरग्रीन"
-  "Weeping Fig - वीकिंग फिग"
-  "Gerbera Daisy - गेरबेरा डेज़ी"
-  "Christmas Cactus - क्रिसमस कैक्टस"
-  "Rubber Plant - रबर प्लांट"
-  "Philodendron - फिलोडेंड्रोन"
-  "Peace Lily - पीस लिली"
-  "Bamboo Palm - बांस पाम"
-  "Golden Pothos - गोल्डन पाथोस"
-  "Gardenia - गार्डेनिया"
-  "Coconut Tree - नारियल का पेड़"
-  "Indian Basil - तुलसी"
-  "Ashoka Tree - अशोक का पेड़"
-  "Jamun Tree - जामुन का पेड़"
-  "Holy Basil - पवित्र तुलसी"
+# Solar Family (English to Hindi)
+declare -a solar_family=(
+  "Sun - सूर्य" "Mercury - बुध" "Venus - शुक्र" "Earth - पृथ्वी" "Mars - मंगल"
+  "Jupiter - बृहस्पति" "Saturn - शनि" "Uranus - अरुण" "Neptune - वरुण"
+)
+
+# Birds (English to Hindi)
+declare -a birds=(
+  "Crow - कौआ" "Pigeon - कबूतर" "Parrot - तोता" "Peacock - मोर" "Sparrow - गौरैया"
+  "Duck - बतख" "Owl - उल्लू" "Eagle - चील" "Swan - हंस" "Kingfisher - राम चिरैया"
+  "Woodpecker - कठफोड़वा" "Penguin - पेंगुइन" "Seagull - समुद्री पक्षी" "Hawk - बाज़" 
+  "Flamingo - राजहंस" "Kite - चील" "Robin - गुलाबी चिड़िया" "Crane - सारस"
+  "Heron - बगुला" "Cuckoo - कोयल" "Hornbill - धनेश" "Pelican - पेलिकन"
+  "Stork - सारस" "Turkey - टर्की" "Vulture - गिद्ध" "Nightingale - बुलबुल"
+  "Quail - बटेर" "Canary - कनारी पक्षी" "Magpie - नीलकंठ" "Dove - फाख्ता"
+)
+
+# India National Symbols (English to Hindi)
+declare -a national_symbols=(
+  "National Flag - तिरंगा"
+  "National Anthem - जन गण मन"
+  "National Song - वंदे मातरम्"
+  "National Emblem - अशोक स्तंभ"
+  "National Animal - बाघ"
+  "National Bird - मोर"
+  "National Flower - कमल"
+  "National Fruit - आम"
+  "National Tree - बरगद"
+  "National River - गंगा"
+  "National Currency - भारतीय रुपया"
+  "National Calendar - भारतीय राष्ट्रीय कैलेंडर"
+  "National Aquatic Animal - गंगा डॉल्फिन"
+  "National Reptile - किंग कोबरा"
+  "National Heritage Animal - हाथी"
+  "National Vegetable - कद्दू"
 )
 
 # Main Menu
@@ -56,8 +62,7 @@ show_main_menu() {
   echo "14. Verbs"
   echo "15. Solar Family"
   echo "16. India National Symbols"
-  echo "17. 24-Hour Oxygen-Giving Plants"
-  echo "18. Exit"
+  echo "17. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -77,8 +82,7 @@ show_main_menu() {
     14) show_vocabulary "Verbs" "verbs" "verbs" ;;
     15) show_vocabulary "Solar Family" "solar_family" "solar_family" ;;
     16) show_vocabulary "India National Symbols" "national_symbols" "national_symbols" ;;
-    17) show_vocabulary "24-Hour Oxygen-Giving Plants" "oxygen_plants" "oxygen_plants" ;;
-    18) exit 0 ;;
+    17) exit 0 ;;
     *) echo "Invalid option, please try again." ;;
   esac
 }
@@ -102,4 +106,3 @@ show_vocabulary() {
 
 # Start Script
 show_main_menu
-    
