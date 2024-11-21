@@ -169,26 +169,25 @@ planets=(
 "Neptune: The furthest planet from the Sun. It is a gas giant known for its striking blue color and strong winds."
 )
 
-# Function to display vocabulary
-show_vocabulary() {
-  title=$1
-  english_list=("${!2}")
-  hindi_list=("${!3}")
-  clear
-  echo "Vocabulary: $title"
-  echo "--------------------------------------------------"
-  for i in "${!english_list[@]}"; do
-    echo "${english_list[$i]} - ${hindi_list[$i]}"
-  done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
-}
+# Indian Festivals in Hindi and English
+declare -a indian_festivals=(
+"Diwali - दीपावली" "Holi - होली" "Dussehra - दशहरा" "Navratri - नवरात्रि" "Raksha Bandhan - रक्षाबंधन"
+"Durga Puja - दुर्गा पूजा" "Eid al-Fitr - ईद उल-फित्र" "Eid al-Adha - ईद उल-अधा" "Christmas - क्रिसमस" "Makar Sankranti - मकर संक्रांति"
+"Ganesh Chaturthi - गणेश चतुर्थी" "Onam - ओणम" "Lohri - लोहड़ी" "Baisakhi - बैसाखी" "Karva Chauth - करवा चौथ"
+"Janmashtami - जन्माष्टमी" "Pongal - पोंगल" "Buddha Purnima - बुद्ध पूर्णिमा" "Mahashivaratri - महाशिवरात्रि" "Maha Kumbh Mela - महा कुम्भ मेला"
+"Vasant Panchami - बसंत पंचमी" "Guru Nanak Jayanti - गुरु नानक जयंती" "Republic Day - गणतंत्र दिवस" "Independence Day - स्वतंत्रता दिवस"
+"Labor Day - श्रमिक दिवस" "Good Friday - गुड फ्राइडे" "Ram Navami - राम नवमी" "Buddha Jayanti - बुद्ध जयंती" "Makar Sankranti - मकर संक्रांति"
+"Diwali - दीपावली" "New Year - नया साल" "Gurpurab - गुरपुरब"
+)
 
-# Function to display shapes with ASCII Art
+# Function to display shapes with meanings and ASCII Art
 show_shapes() {
   clear
-  echo "Shapes"
-  echo "--------------------------------------------------"
+  echo "Shapes and their Hindi Meanings"
+  for shape in "${shapes[@]}"; do
+    echo "$shape"
+  done
+
   echo "Circle - वृत्त"
   for line in "${circle[@]}"; do
     echo "$line"
@@ -229,6 +228,18 @@ show_planets() {
   show_main_menu
 }
 
+# Function to display Indian Festivals
+show_festivals() {
+  clear
+  echo "Indian Festivals"
+  echo "--------------------------------------------------"
+  for festival in "${indian_festivals[@]}"; do
+    echo "$festival"
+  done
+  read -p "Press any key to return to the main menu..." anykey
+  show_main_menu
+}
+
 # Main menu to choose an option
 show_main_menu() {
   clear
@@ -250,7 +261,8 @@ show_main_menu() {
   echo "15. Classroom Things"
   echo "16. Shapes"
   echo "17. Planets and the Sun"
-  echo "18. Exit"
+  echo "18. Indian Festivals"
+  echo "19. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -271,7 +283,8 @@ show_main_menu() {
     15) show_vocabulary "Classroom Things" classroom_things[@] classroom_things[@] ;;
     16) show_shapes ;;
     17) show_planets ;;
-    18) exit 0 ;;
+    18) show_festivals ;;
+    19) exit 0 ;;
     *) 
       echo "Invalid option, please try again."
       read -p "Press any key to return to the main menu..." anykey
