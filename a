@@ -156,6 +156,19 @@ hexagon=(
 "   ******   "
 )
 
+# Planet Details
+planets=(
+"Sun: The center of our solar system. It is a star, not a planet. It provides heat and light necessary for life on Earth."
+"Mercury: The closest planet to the Sun. It is small, rocky, and has extreme temperatures."
+"Venus: Known as Earth's twin due to its similar size. It has a thick atmosphere and is the hottest planet."
+"Earth: Our home planet. It is the only known planet to support life. It has water, a breathable atmosphere, and diverse ecosystems."
+"Mars: Known as the Red Planet due to its reddish appearance. It has the largest volcano and the deepest, longest valley in the solar system."
+"Jupiter: The largest planet in the solar system. It is a gas giant with a Great Red Spot, a storm that has been raging for hundreds of years."
+"Saturn: Known for its stunning ring system made of ice and rock. It is a gas giant and has many moons."
+"Uranus: A cold, gas giant with a tilted axis, causing extreme seasons. It is unique for rotating on its side."
+"Neptune: The furthest planet from the Sun. It is a gas giant known for its striking blue color and strong winds."
+)
+
 # Function to display vocabulary
 show_vocabulary() {
   title=$1
@@ -180,37 +193,43 @@ show_shapes() {
   for line in "${circle[@]}"; do
     echo "$line"
   done
-  echo ""
   echo "Square - वर्ग"
   for line in "${square[@]}"; do
     echo "$line"
   done
-  echo ""
   echo "Triangle - त्रिकोण"
   for line in "${triangle[@]}"; do
     echo "$line"
   done
-  echo ""
   echo "Rectangle - आयत"
   for line in "${rectangle[@]}"; do
     echo "$line"
   done
-  echo ""
   echo "Oval - अंडाकार"
   for line in "${oval[@]}"; do
     echo "$line"
   done
-  echo ""
   echo "Hexagon - षट्कोण"
   for line in "${hexagon[@]}"; do
     echo "$line"
   done
-  echo ""
   read -p "Press any key to return to the main menu..." anykey
   show_main_menu
 }
 
-# Main menu
+# Function to display planet details
+show_planets() {
+  clear
+  echo "Planets and the Sun"
+  echo "--------------------------------------------------"
+  for planet in "${planets[@]}"; do
+    echo "$planet"
+  done
+  read -p "Press any key to return to the main menu..." anykey
+  show_main_menu
+}
+
+# Main menu to choose an option
 show_main_menu() {
   clear
   echo "Vocabulary Lists"
@@ -230,8 +249,10 @@ show_main_menu() {
   echo "14. Clothes"
   echo "15. Classroom Things"
   echo "16. Shapes"
-  echo "17. Exit"
+  echo "17. Planets and the Sun"
+  echo "18. Exit"
   read -p "Please select an option: " option
+
   case $option in
     1) show_vocabulary "Opposites" english_opposites[@] hindi_opposites[@] ;;
     2) show_vocabulary "Masculine to Feminine" masculine_feminine[@] masculine_feminine[@] ;;
@@ -249,7 +270,8 @@ show_main_menu() {
     14) show_vocabulary "Clothes" clothes[@] clothes[@] ;;
     15) show_vocabulary "Classroom Things" classroom_things[@] classroom_things[@] ;;
     16) show_shapes ;;
-    17) exit 0 ;;
+    17) show_planets ;;
+    18) exit 0 ;;
     *) 
       echo "Invalid option, please try again."
       read -p "Press any key to return to the main menu..." anykey
