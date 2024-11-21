@@ -76,6 +76,9 @@ declare -a metals=(
 # Crops
 declare -a crops=(
 "Wheat - गेहूं" "Rice - चावल" "Corn - मक्का" "Sugarcane - गन्ना" "Cotton - कपास"
+"Barley - जौ" "Millet - बाजरा" "Gram - चना" "Mustard - सरसों" "Peas - मटर"
+"Sorghum - ज्वार" "Soybean - सोयाबीन" "Groundnut - मूंगफली" "Lentils - मसूर" "Sunflower - सूरजमुखी"
+"Sesame - तिल" "Tobacco - तंबाकू" "Coffee - कॉफी" "Tea - चाय" "Rubber - रबर"
 )
 
 # Verbs
