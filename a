@@ -170,6 +170,22 @@ declare -a poisonous_plants=(
 "Poison Ivy - विषवृक्ष" "Poison Oak - विष ओक"
 )
 
+# Wooden Objects
+declare -a wooden_objects=(
+"Table - मेज़" "Chair - कुर्सी" "Cabinet - अलमारी" "Shelf - शेल्फ" "Wooden Spoon - लकड़ी का चम्मच"
+"Wooden Bowl - लकड़ी का कटोरा" "Wooden Plank - लकड़ी की पट्टी" "Wooden Chair - लकड़ी की कुर्सी" 
+"Wooden Bed - लकड़ी का बिस्तर" "Wooden Box - लकड़ी का बॉक्स" 
+"Wooden Tray - लकड़ी की ट्रे" "Wooden Frame - लकड़ी का फ्रेम" "Wooden Rack - लकड़ी की रैक" 
+"Wooden Cup - लकड़ी कप" "Wooden Plate - लकड़ी की प्लेट" "Wooden Stool - लकड़ी की स्टूल" 
+"Wooden Bench - लकड़ी की बेंच" "Wooden Door - लकड़ी का दरवाजा" "Wooden Window - लकड़ी की खिड़की" 
+"Wooden Block - लकड़ी का ब्लॉक" "Wooden Cart - लकड़ी की गाड़ी"
+)
+
+# Transport Meaning
+declare -a transport_meaning=(
+"Transport refers to the movement of goods or people from one place to another using various vehicles such as cars, buses, bicycles, trains, ships, or airplanes."
+)
+
 # Function to display vocabulary list
 show_vocabulary() {
   echo "Vocabulary for $1:"
@@ -210,7 +226,9 @@ show_main_menu() {
   echo "24. Aquatic Animals"
   echo "25. Aerial Animals"
   echo "26. Poisonous Plants"
-  echo "27. Exit"
+  echo "27. Wooden Objects"
+  echo "28. Transport Meaning"
+  echo "29. Exit"
   read -p "Select an option: " option
   case $option in
     1) show_vocabulary "Opposites" english_opposites[@] ;;
@@ -239,7 +257,9 @@ show_main_menu() {
     24) show_vocabulary "Aquatic Animals" aquatic_animals[@] ;;
     25) show_vocabulary "Aerial Animals" aerial_animals[@] ;;
     26) show_vocabulary "Poisonous Plants" poisonous_plants[@] ;;
-    27) exit ;;
+    27) show_vocabulary "Wooden Objects" wooden_objects[@] ;;
+    28) show_vocabulary "Transport Meaning" transport_meaning[@] ;;
+    29) exit ;;
     *) echo "Invalid option, try again." ;;
   esac
 }
