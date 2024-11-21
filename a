@@ -194,6 +194,29 @@ declare -a kitchen_tools=(
 "Can Opener - कैन ओपनर" "Peeler - छिलनेवाला"
 )
 
+# Hospital Tools
+declare -a hospital_tools=(
+"Stethoscope - स्टेथोस्कोप" "Syringe - सिरिंज" "Thermometer - थर्मामीटर" "Blood Pressure Monitor - रक्तचाप मॉनीटर"
+"Scalpel - सर्जरी चाकू" "Bandage - पट्टी" "Gloves - दस्ताने" "IV Drip - IV ड्रिप" "Oxygen Mask - ऑक्सीजन मास्क"
+"Defibrillator - डिफिब्रिलेटर" "Stretcher - स्ट्रेचर" "Wheelchair - व्हीलचेयर" "Surgical Mask - सर्जिकल मास्क"
+"Antiseptic - एंटीसेप्टिक" "Tongue Depressor - जीभ दबाने वाला" "Sutures - सिलाई" "Cotton Balls - कॉटन बॉल्स"
+"Pulse Oximeter - पल्स ऑक्सीमीटर" "Surgical Scissors - सर्जिकल कैंची" "Nebulizer - नेब्युलाइज़र" "Laryngoscope - लैरींगोस्कोप"
+)
+
+# Medicinal Plants
+declare -a medicinal_plants=(
+"Aloe Vera - एलोवेरा" "Tulsi - तुलसी" "Neem - नीम" "Ginger - अदरक" "Garlic - लहसुन"
+"Mint - पुदीना" "Ashwagandha - अश्वगंधा" "Turmeric - हल्दी" "Basil - तुलसी" "Cinnamon - दारचीनी"
+"Giloy - गिलोय" "Brahmi - ब्राह्मी" "Eucalyptus - नीलगिरी" "Coriander - धनिया" "Fenugreek - मेथी"
+"Jatamansi - जातामांसी" "Amla - आंवला" "Sarpagandha - सर्पगंधा" "Shatavari - शतावरी" "Moringa - सहजन"
+)
+
+# Oxygen-Producing Plants
+declare -a oxygen_plants=(
+"Snake Plant - साँप का पौधा" "Aloe Vera - एलोवेरा" "Spider Plant - मकड़ी का पौधा" "Peace Lily - पीस लिली"
+"Areca Palm - अरेका पाम"
+)
+
 # Function to display vocabulary lists
 show_vocabulary() {
   category=$1
@@ -234,7 +257,10 @@ show_main_menu() {
   echo "18. Indian Festivals"
   echo "19. Millets"
   echo "20. Kitchen Tools"
-  echo "21. Exit"
+  echo "21. Hospital Tools"
+  echo "22. Medicinal Plants"
+  echo "23. Oxygen-Producing Plants"
+  echo "24. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -258,7 +284,10 @@ show_main_menu() {
     18) show_festivals ;;
     19) show_millets ;;
     20) show_vocabulary "Kitchen Tools" kitchen_tools[@] kitchen_tools[@] ;;
-    21) exit 0 ;;
+    21) show_vocabulary "Hospital Tools" hospital_tools[@] hospital_tools[@] ;;
+    22) show_vocabulary "Medicinal Plants" medicinal_plants[@] medicinal_plants[@] ;;
+    23) show_vocabulary "Oxygen-Producing Plants" oxygen_plants[@] oxygen_plants[@] ;;
+    24) exit 0 ;;
     *) 
       echo "Invalid option, please try again."
       read -p "Press any key to return to the main menu..." anykey
