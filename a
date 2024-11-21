@@ -100,13 +100,61 @@ declare -a classroom_things=(
 "Trash Can - कूड़ेदान"
 )
 
-# Shapes and Hindi meanings
+# Shapes and Hindi meanings with ASCII Art
 shapes=("Circle - वृत्त"
         "Square - वर्ग"
         "Triangle - त्रिकोण"
         "Rectangle - आयत"
         "Oval - अंडाकार"
         "Hexagon - षट्कोण")
+
+# ASCII art for shapes
+circle=(
+"   ****   "
+" *      * "
+"*        *"
+" *      * "
+"   ****   "
+)
+
+square=(
+"*********"
+"*       *"
+"*       *"
+"*       *"
+"*********"
+)
+
+triangle=(
+"     *     "
+"    * *    "
+"   *   *   "
+"  *     *  "
+" ********* "
+)
+
+rectangle=(
+"*************"
+"*           *"
+"*           *"
+"*************"
+)
+
+oval=(
+"    ****    "
+"  *      *  "
+" *        * "
+"  *      *  "
+"    ****    "
+)
+
+hexagon=(
+"   ******   "
+"  *      *  "
+" *        * "
+"  *      *  "
+"   ******   "
+)
 
 # Function to display vocabulary
 show_vocabulary() {
@@ -123,14 +171,41 @@ show_vocabulary() {
   show_main_menu
 }
 
-# Function to display shapes
+# Function to display shapes with ASCII Art
 show_shapes() {
   clear
   echo "Shapes"
   echo "--------------------------------------------------"
-  for shape in "${shapes[@]}"; do
-    echo "$shape"
+  echo "Circle - वृत्त"
+  for line in "${circle[@]}"; do
+    echo "$line"
   done
+  echo ""
+  echo "Square - वर्ग"
+  for line in "${square[@]}"; do
+    echo "$line"
+  done
+  echo ""
+  echo "Triangle - त्रिकोण"
+  for line in "${triangle[@]}"; do
+    echo "$line"
+  done
+  echo ""
+  echo "Rectangle - आयत"
+  for line in "${rectangle[@]}"; do
+    echo "$line"
+  done
+  echo ""
+  echo "Oval - अंडाकार"
+  for line in "${oval[@]}"; do
+    echo "$line"
+  done
+  echo ""
+  echo "Hexagon - षट्कोण"
+  for line in "${hexagon[@]}"; do
+    echo "$line"
+  done
+  echo ""
   read -p "Press any key to return to the main menu..." anykey
   show_main_menu
 }
@@ -154,10 +229,9 @@ show_main_menu() {
   echo "13. Crops"
   echo "14. Clothes"
   echo "15. Classroom Things"
-  echo "16. General Shapes"
+  echo "16. Shapes"
   echo "17. Exit"
   read -p "Please select an option: " option
-
   case $option in
     1) show_vocabulary "Opposites" english_opposites[@] hindi_opposites[@] ;;
     2) show_vocabulary "Masculine to Feminine" masculine_feminine[@] masculine_feminine[@] ;;
