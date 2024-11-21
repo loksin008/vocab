@@ -100,6 +100,29 @@ declare -a classroom_things=(
 "Trash Can - कूड़ेदान"
 )
 
+# Grammar definitions and examples
+noun_def="A noun is a word that represents a person, place, thing, or idea. Examples:\n1. Dog\n2. House\n3. Teacher\n4. Car\n5. Book\n6. Happiness\n7. London\n8. Chair\n9. Computer\n10. Sun"
+
+pronoun_def="A pronoun is a word that takes the place of a noun. Examples:\n1. I\n2. You\n3. He\n4. She\n5. It\n6. We\n7. They\n8. Him\n9. Her\n10. Us"
+
+verb_def="A verb is a word that describes an action or state of being. Examples:\n1. Run\n2. Eat\n3. Sleep\n4. Write\n5. Talk\n6. Walk\n7. Sing\n8. Read\n9. Listen\n10. Jump"
+
+adverb_def="An adverb is a word that describes a verb, adjective, or another adverb. Examples:\n1. Quickly\n2. Loudly\n3. Gracefully\n4. Very\n5. Slowly\n6. Never\n7. Often\n8. Always\n9. Happily\n10. Soon"
+
+adjective_def="An adjective is a word that describes a noun. Examples:\n1. Beautiful\n2. Tall\n3. Happy\n4. Big\n5. Green\n6. Smart\n7. Interesting\n8. Comfortable\n9. New\n10. Bright"
+
+conjunction_def="A conjunction is a word that connects two or more words, phrases, or clauses. Examples:\n1. And\n2. But\n3. Or\n4. Nor\n5. For\n6. So\n7. Yet\n8. Although\n9. Because\n10. If"
+
+interjection_def="An interjection is a word or phrase that expresses a strong feeling or reaction. Examples:\n1. Wow!\n2. Oh!\n3. Oops!\n4. Hey!\n5. Ugh!\n6. Hooray!\n7. Alas!\n8. Yikes!\n9. Wowza!\n10. Eww!"
+
+# Shapes and Hindi meanings
+shapes=("Circle - वृत्त"
+        "Square - वर्ग"
+        "Triangle - त्रिकोण"
+        "Rectangle - आयत"
+        "Oval - अंडाकार"
+        "Hexagon - षट्कोण")
+
 # Function to display vocabulary
 show_vocabulary() {
   title=$1
@@ -127,22 +150,22 @@ show_definitions() {
   show_main_menu
 }
 
-# Function to display shapes with Hindi meanings
+# Function to display shapes
 show_shapes() {
   clear
-  echo "Types of General Shapes with ASCII Art and Hindi Meanings"
+  echo "Shapes"
+  echo "--------------------------------------------------"
   for shape in "${shapes[@]}"; do
-    echo -e "$shape"
-    echo ""
+    echo "$shape"
   done
   read -p "Press any key to return to the main menu..." anykey
   show_main_menu
 }
 
-# Main menu to navigate
+# Main menu
 show_main_menu() {
   clear
-  echo "Vocabulary and Grammar Menu"
+  echo "Vocabulary Lists"
   echo "1. Opposites"
   echo "2. Masculine to Feminine"
   echo "3. Pots Names"
@@ -164,21 +187,21 @@ show_main_menu() {
   read -p "Please select an option: " option
 
   case $option in
-    1) show_vocabulary "Opposites" "english_opposites[@]" "hindi_opposites[@]" ;;
-    2) show_vocabulary "Masculine to Feminine" "masculine_feminine[@]" "masculine_feminine[@]" ;;
-    3) show_vocabulary "Pots Names" "pots_names[@]" "pots_names[@]" ;;
-    4) show_vocabulary "Flowers" "flowers[@]" "flowers[@]" ;;
-    5) show_vocabulary "Body Parts" "body_parts[@]" "body_parts[@]" ;;
-    6) show_vocabulary "Days of the Week" "days[@]" "days[@]" ;;
-    7) show_vocabulary "Months of the Year" "months[@]" "months[@]" ;;
-    8) show_vocabulary "Colors" "colors[@]" "colors[@]" ;;
-    9) show_vocabulary "Vegetables" "vegetables[@]" "vegetables[@]" ;;
-    10) show_vocabulary "Fruits" "fruits[@]" "fruits[@]" ;;
-    11) show_vocabulary "Birds" "birds[@]" "birds[@]" ;;
-    12) show_vocabulary "Metals" "metals[@]" "metals[@]" ;;
-    13) show_vocabulary "Crops" "crops[@]" "crops[@]" ;;
-    14) show_vocabulary "Clothes" "clothes[@]" "clothes[@]" ;;
-    15) show_vocabulary "Classroom Things" "classroom_things[@]" "classroom_things[@]" ;;
+    1) show_vocabulary "Opposites" english_opposites[@] hindi_opposites[@] ;;
+    2) show_vocabulary "Masculine to Feminine" masculine_feminine[@] masculine_feminine[@] ;;
+    3) show_vocabulary "Pots Names" pots_names[@] pots_names[@] ;;
+    4) show_vocabulary "Flowers" flowers[@] flowers[@] ;;
+    5) show_vocabulary "Body Parts" body_parts[@] body_parts[@] ;;
+    6) show_vocabulary "Days of the Week" days[@] days[@] ;;
+    7) show_vocabulary "Months of the Year" months[@] months[@] ;;
+    8) show_vocabulary "Colors" colors[@] colors[@] ;;
+    9) show_vocabulary "Vegetables" vegetables[@] vegetables[@] ;;
+    10) show_vocabulary "Fruits" fruits[@] fruits[@] ;;
+    11) show_vocabulary "Birds" birds[@] birds[@] ;;
+    12) show_vocabulary "Metals" metals[@] metals[@] ;;
+    13) show_vocabulary "Crops" crops[@] crops[@] ;;
+    14) show_vocabulary "Clothes" clothes[@] clothes[@] ;;
+    15) show_vocabulary "Classroom Things" classroom_things[@] classroom_things[@] ;;
     16) 
       echo "Grammar Definitions"
       echo "1. Noun"
@@ -192,13 +215,13 @@ show_main_menu() {
       read -p "Please select a grammar topic: " grammar_option
 
       case $grammar_option in
-        1) show_definitions "Noun Definition and Examples" "noun_def" ;;
-        2) show_definitions "Pronoun Definition and Examples" "pronoun_def" ;;
-        3) show_definitions "Verb Definition and Examples" "verb_def" ;;
-        4) show_definitions "Adverb Definition and Examples" "adverb_def" ;;
-        5) show_definitions "Adjective Definition and Examples" "adjective_def" ;;
-        6) show_definitions "Conjunction Definition and Examples" "conjunction_def" ;;
-        7) show_definitions "Interjection Definition and Examples" "interjection_def" ;;
+        1) show_definitions "Noun Definition and Examples" noun_def ;;
+        2) show_definitions "Pronoun Definition and Examples" pronoun_def ;;
+        3) show_definitions "Verb Definition and Examples" verb_def ;;
+        4) show_definitions "Adverb Definition and Examples" adverb_def ;;
+        5) show_definitions "Adjective Definition and Examples" adjective_def ;;
+        6) show_definitions "Conjunction Definition and Examples" conjunction_def ;;
+        7) show_definitions "Interjection Definition and Examples" interjection_def ;;
         8) show_main_menu ;;
         *) 
           echo "Invalid option, please try again."
