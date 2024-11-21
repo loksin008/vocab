@@ -130,6 +130,11 @@ declare -a transport_vehicles=(
   "Hot Air Balloon - हॉट एयर बैलून" "Segway - सेगवे" "Lorry - लॉरी"
 )
 
+# Seasons names array
+declare -a seasons=(
+  "Spring - वसंत" "Summer - गर्मी" "Monsoon - वर्षा" "Autumn - शरद"
+)
+
 # Function to show the vocabulary list
 show_vocabulary() {
   category=$1
@@ -174,8 +179,9 @@ show_main_menu() {
   echo "25. Aerial Animals"
   echo "26. Poisonous Plants"
   echo "27. Wooden Objects"
-  echo "28. Transport"  # Updated option
-  echo "29. Exit"
+  echo "28. Transport"
+  echo "29. Seasons"  # New Seasons option
+  echo "30. Exit"
   read -p "Select an option: " option
   case $option in
     1) show_vocabulary "Opposites" "${english_opposites[@]}" ;;
@@ -205,8 +211,9 @@ show_main_menu() {
     25) show_vocabulary "Aerial Animals" "${aerial_animals[@]}" ;;
     26) show_vocabulary "Poisonous Plants" "${poisonous_plants[@]}" ;;
     27) show_vocabulary "Wooden Objects" "${wooden_objects[@]}" ;;
-    28) show_vocabulary "Transport" "${transport_vehicles[@]}" ;;  # Transport category
-    29) exit ;;
+    28) show_vocabulary "Transport" "${transport_vehicles[@]}" ;;
+    29) show_vocabulary "Seasons" "${seasons[@]}" ;;  # Show Seasons option
+    30) exit ;;
     *) echo "Invalid option, try again." ;;
   esac
 }
