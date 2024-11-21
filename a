@@ -2,13 +2,13 @@
 
 # Vocabulary data
 # Opposites
-declare -a hindi_opposites=(
-"अच्छा - बुरा" "बड़ा - छोटा" "खुश - दुखी" "सुंदर - कुरूप" "तेज़ - धीमा"
-"शांत - शोर" "धन - गरीबी" "उज्ज्वल - अंधकार" "जीवन - मृत्यु" "सच - झूठ"
-)
 declare -a english_opposites=(
 "Good - Bad" "Big - Small" "Happy - Sad" "Beautiful - Ugly" "Fast - Slow"
 "Quiet - Noisy" "Rich - Poor" "Bright - Dark" "Life - Death" "True - False"
+)
+declare -a hindi_opposites=(
+"अच्छा - बुरा" "बड़ा - छोटा" "खुश - दुखी" "सुंदर - कुरूप" "तेज़ - धीमा"
+"शांत - शोर" "धन - गरीबी" "उज्ज्वल - अंधकार" "जीवन - मृत्यु" "सच - झूठ"
 )
 
 # Masculine to Feminine
@@ -100,43 +100,11 @@ declare -a classroom_things=(
 "Trash Can - कूड़ेदान"
 )
 
-# Shapes with ASCII Art and Hindi Meanings
-declare -a shapes=(
-"Circle: (वृत्त)\n   ***   \n *     * \n*       *\n *     * \n   ***   "
-"Square: (वर्ग)\n*******\n*     *\n*     *\n*     *\n*******"
-"Rectangle: (आयत)\n***********\n*         *\n*         *\n***********"
-"Triangle: (त्रिकोण)\n    *    \n   * *   \n  *   *  \n *     * \n*********"
-"Pentagon: (पेंटागन)\n    *    \n   * *   \n  *   *  \n *     * \n*********"
-"Hexagon: (षट्कोण)\n   ****   \n  *    *  \n *      * \n  *    *  \n   ****   "
-)
-
-# Grammar Definitions
-noun_def="A noun is a person, place, thing, or idea.
-Examples: 1) Dog - कुत्ता, 2) School - स्कूल, 3) Car - कार, 4) Book - किताब, 5) City - शहर, 6) Teacher - शिक्षक, 7) Chair - कुर्सी, 8) Flower - फूल, 9) Computer - कंप्यूटर, 10) Water - पानी"
-
-pronoun_def="A pronoun is a word that takes the place of a noun.
-Examples: 1) He - वह, 2) She - वह, 3) They - वे, 4) It - यह, 5) We - हम, 6) You - तुम, 7) I - मैं, 8) Him - उसे, 9) Her - उसे, 10) Us - हमें"
-
-verb_def="A verb is a word that describes an action or state of being.
-Examples: 1) Run - दौड़ना, 2) Eat - खाना, 3) Sleep - सोना, 4) Talk - बात करना, 5) Walk - चलना, 6) Read - पढ़ना, 7) Write - लिखना, 8) Listen - सुनना, 9) Sing - गाना, 10) Dance - नाचना"
-
-adverb_def="An adverb is a word that modifies a verb, adjective, or another adverb.
-Examples: 1) Quickly - जल्दी, 2) Slowly - धीरे, 3) Loudly - ज़ोर से, 4) Quietly - चुपके से, 5) Happily - खुशी से, 6) Always - हमेशा, 7) Never - कभी नहीं, 8) Often - अक्सर, 9) Here - यहाँ, 10) There - वहाँ"
-
-adjective_def="An adjective is a word that describes a noun.
-Examples: 1) Beautiful - सुंदर, 2) Tall - लंबा, 3) Smart - स्मार्ट, 4) Good - अच्छा, 5) Bad - बुरा, 6) Strong - मजबूत, 7) Weak - कमजोर, 8) Old - पुराना, 9) New - नया, 10) Bright - उज्जवल"
-
-conjunction_def="A conjunction is a word that connects words, phrases, or clauses.
-Examples: 1) And - और, 2) But - लेकिन, 3) Or - या, 4) Because - क्योंकि, 5) So - तो, 6) Although - हालांकि, 7) If - यदि, 8) Until - जब तक, 9) While - जबकि, 10) Before - पहले"
-
-interjection_def="An interjection is a word or phrase that expresses strong emotion.
-Examples: 1) Wow - वाह, 2) Oops - उफ्फ, 3) Hey - हे, 4) Oh - ओह, 5) Hurrah - हुर्रे, 6) Ah - आह, 7) Ugh - उफ़, 8) Yikes - याइकस, 9) Oh no - ओ नहीं, 10) Bravo - ब्रावो"
-  
 # Function to display vocabulary
 show_vocabulary() {
   title=$1
-  english_list=$2
-  hindi_list=$3
+  english_list=("${!2}")
+  hindi_list=("${!3}")
   clear
   echo "Vocabulary: $title"
   echo "--------------------------------------------------"
@@ -196,21 +164,21 @@ show_main_menu() {
   read -p "Please select an option: " option
 
   case $option in
-    1) show_vocabulary "Opposites" "english_opposites" "hindi_opposites" ;;
-    2) show_vocabulary "Masculine to Feminine" "masculine_feminine" "masculine_feminine" ;;
-    3) show_vocabulary "Pots Names" "pots_names" "pots_names" ;;
-    4) show_vocabulary "Flowers" "flowers" "flowers" ;;
-    5) show_vocabulary "Body Parts" "body_parts" "body_parts" ;;
-    6) show_vocabulary "Days of the Week" "days" "days" ;;
-    7) show_vocabulary "Months of the Year" "months" "months" ;;
-    8) show_vocabulary "Colors" "colors" "colors" ;;
-    9) show_vocabulary "Vegetables" "vegetables" "vegetables" ;;
-    10) show_vocabulary "Fruits" "fruits" "fruits" ;;
-    11) show_vocabulary "Birds" "birds" "birds" ;;
-    12) show_vocabulary "Metals" "metals" "metals" ;;
-    13) show_vocabulary "Crops" "crops" "crops" ;;
-    14) show_vocabulary "Clothes" "clothes" "clothes" ;;
-    15) show_vocabulary "Classroom Things" "classroom_things" "classroom_things" ;;
+    1) show_vocabulary "Opposites" "english_opposites[@]" "hindi_opposites[@]" ;;
+    2) show_vocabulary "Masculine to Feminine" "masculine_feminine[@]" "masculine_feminine[@]" ;;
+    3) show_vocabulary "Pots Names" "pots_names[@]" "pots_names[@]" ;;
+    4) show_vocabulary "Flowers" "flowers[@]" "flowers[@]" ;;
+    5) show_vocabulary "Body Parts" "body_parts[@]" "body_parts[@]" ;;
+    6) show_vocabulary "Days of the Week" "days[@]" "days[@]" ;;
+    7) show_vocabulary "Months of the Year" "months[@]" "months[@]" ;;
+    8) show_vocabulary "Colors" "colors[@]" "colors[@]" ;;
+    9) show_vocabulary "Vegetables" "vegetables[@]" "vegetables[@]" ;;
+    10) show_vocabulary "Fruits" "fruits[@]" "fruits[@]" ;;
+    11) show_vocabulary "Birds" "birds[@]" "birds[@]" ;;
+    12) show_vocabulary "Metals" "metals[@]" "metals[@]" ;;
+    13) show_vocabulary "Crops" "crops[@]" "crops[@]" ;;
+    14) show_vocabulary "Clothes" "clothes[@]" "clothes[@]" ;;
+    15) show_vocabulary "Classroom Things" "classroom_things[@]" "classroom_things[@]" ;;
     16) 
       echo "Grammar Definitions"
       echo "1. Noun"
