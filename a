@@ -37,6 +37,13 @@ declare -a months=(
   "November - नवम्बर" "December - दिसम्बर"
 )
 
+# Hindi months
+declare -a hindi_months=(
+  "Chaitra - चैत्र" "Vaishakha - वैशाख" "Jyeshtha - ज्येष्ठ" "Ashadha - आषाढ़"
+  "Shravana - श्रावण" "Bhadrapada - भाद्रपद" "Ashwin - आश्विन" "Kartika - कार्तिक"
+  "Agrahayana - अग्रहायण" "Pausa - पौष" "Magha - माघ" "Phalguna - फाल्गुन"
+)
+
 declare -a colors=(
   "Red - लाल" "Green - हरा" "Blue - नीला" "Yellow - पीला" "Black - काला" "White - सफेद"
   "Pink - गुलाबी" "Purple - बैंगनी"
@@ -180,10 +187,12 @@ show_main_menu() {
   echo "26. Poisonous Plants"
   echo "27. Wooden Objects"
   echo "28. Transport"
-  echo "29. Seasons"  # New Seasons option
+  echo "29. Seasons"
   echo "30. Exit"
-  read -p "Select an option: " option
-  case $option in
+
+  read -p "Enter your choice: " choice
+
+  case $choice in
     1) show_vocabulary "Opposites" "${english_opposites[@]}" ;;
     2) show_vocabulary "Masculine to Feminine" "${masculine_feminine[@]}" ;;
     3) show_vocabulary "Pots Names" "${pots_names[@]}" ;;
