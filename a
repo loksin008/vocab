@@ -1,213 +1,151 @@
 #!/bin/bash
 
-# Vocabulary data
-# Opposites
+# Vocabulary arrays
 declare -a english_opposites=(
-"Good - Bad" "Big - Small" "Happy - Sad" "Beautiful - Ugly" "Fast - Slow"
-"Quiet - Noisy" "Rich - Poor" "Bright - Dark" "Life - Death" "True - False"
-)
-declare -a hindi_opposites=(
-"अच्छा - बुरा" "बड़ा - छोटा" "खुश - दुखी" "सुंदर - कुरूप" "तेज़ - धीमा"
-"शांत - शोर" "धन - गरीबी" "उज्ज्वल - अंधकार" "जीवन - मृत्यु" "सच - झूठ"
+  "Hot - Cold" "Light - Dark" "Big - Small" "Rich - Poor" "Happy - Sad"
+  "Fast - Slow" "Hard - Soft" "Tall - Short" "Beautiful - Ugly"
 )
 
-# Masculine to Feminine
 declare -a masculine_feminine=(
-"Boy - Girl" "King - Queen" "Lion - Lioness" "Actor - Actress" "Man - Woman"
-"Father - Mother" "Brother - Sister" "Husband - Wife" "Son - Daughter" "Prince - Princess"
+  "King - Queen" "Actor - Actress" "Boy - Girl" "Father - Mother" "Brother - Sister"
+  "Husband - Wife" "Son - Daughter" "Man - Woman"
 )
 
-# Pots Names
 declare -a pots_names=(
-"कुल्हड़ - Kulhad" "घड़ा - Ghada" "मटका - Matka" "सुराही - Surahi" "हंडा - Handa"
+  "Clay Pot - मिट्टी का घड़ा" "Copper Pot - तांबे का घड़ा" "Brass Pot - पीतल का घड़ा"
+  "Steel Pot - स्टील का बर्तन" "Earthen Pot - मटके"
 )
 
-# Flowers
 declare -a flowers=(
-"Rose - गुलाब" "Lotus - कमल" "Marigold - गेंदा" "Jasmine - चमेली" "Hibiscus - गुड़हल"
+  "Rose - गुलाब" "Tulip - ट्यूलिप" "Lily - लिली" "Sunflower - सूरजमुखी" "Jasmine - चमेली"
+  "Daisy - गुलबहार" "Marigold - गेंदा"
 )
 
-# Body Parts
 declare -a body_parts=(
-"Hand - हाथ" "Leg - पैर" "Head - सिर" "Eye - आँख" "Ear - कान"
-"Nose - नाक" "Mouth - मुँह" "Fingers - उंगलियाँ" "Stomach - पेट" "Heart - हृदय"
+  "Head - सिर" "Hand - हाथ" "Leg - पैर" "Eye - आंख" "Ear - कान" "Mouth - मुंह"
+  "Nose - नाक" "Heart - दिल"
 )
 
-# Days of the Week
 declare -a days=(
-"Sunday - रविवार" "Monday - सोमवार" "Tuesday - मंगलवार" "Wednesday - बुधवार" 
-"Thursday - गुरुवार" "Friday - शुक्रवार" "Saturday - शनिवार"
+  "Monday - सोमवार" "Tuesday - मंगलवार" "Wednesday - बुधवार" "Thursday - गुरुवार"
+  "Friday - शुक्रवार" "Saturday - शनिवार" "Sunday - रविवार"
 )
 
-# Months of the Year
 declare -a months=(
-"January - जनवरी" "February - फरवरी" "March - मार्च" "April - अप्रैल" 
-"May - मई" "June - जून" "July - जुलाई" "August - अगस्त" 
-"September - सितंबर" "October - अक्टूबर" "November - नवंबर" "December - दिसंबर"
+  "January - जनवरी" "February - फरवरी" "March - मार्च" "April - अप्रैल" "May - मई"
+  "June - जून" "July - जुलाई" "August - अगस्त" "September - सितंबर" "October - अक्टूबर"
+  "November - नवम्बर" "December - दिसम्बर"
 )
 
-# Colors
 declare -a colors=(
-"Red - लाल" "Blue - नीला" "Green - हरा" "Yellow - पीला" "White - सफेद"
-"Black - काला" "Pink - गुलाबी" "Orange - नारंगी" "Purple - बैंगनी" "Brown - भूरा"
+  "Red - लाल" "Green - हरा" "Blue - नीला" "Yellow - पीला" "Black - काला" "White - सफेद"
+  "Pink - गुलाबी" "Purple - बैंगनी"
 )
 
-# Vegetables
 declare -a vegetables=(
-"Potato - आलू" "Tomato - टमाटर" "Onion - प्याज" "Carrot - गाजर" "Spinach - पालक"
+  "Potato - आलू" "Tomato - टमाटर" "Onion - प्याज" "Carrot - गाजर" "Cabbage - पत्तागोभी"
+  "Cauliflower - फूलगोभी" "Peas - मटर"
 )
 
-# Fruits
 declare -a fruits=(
-"Apple - सेब" "Banana - केला" "Mango - आम" "Orange - संतरा" "Grapes - अंगूर"
+  "Apple - सेब" "Banana - केला" "Mango - आम" "Grapes - अंगूर" "Orange - संतरा"
+  "Pineapple - अनानास" "Papaya - पपीता"
 )
 
-# Birds
 declare -a birds=(
-"Sparrow - गौरेया" "Crow - कौआ" "Peacock - मोर" "Parrot - तोता" "Pigeon - कबूतर"
+  "Eagle - गरुड़" "Sparrow - गौरैया" "Pigeon - कबूतर" "Peacock - मोर" "Crow - कौआ"
 )
 
-# Metals
 declare -a metals=(
-"Gold - सोना" "Silver - चांदी" "Iron - लोहा" "Copper - तांबा" "Aluminum - एल्युमिनियम"
+  "Gold - सोना" "Silver - चांदी" "Copper - तांबा" "Iron - लोहे" "Aluminum - एल्युमिनियम"
 )
 
-# Crops
 declare -a crops=(
-"Wheat - गेहूं" "Rice - चावल" "Corn - मक्का" "Sugarcane - गन्ना" "Cotton - कपास"
-"Barley - जौ" "Oats - जई" "Mustard - सरसों" "Soybean - सोयाबीन" "Peas - मटर"
+  "Wheat - गेहूं" "Rice - चावल" "Maize - मक्का" "Sugarcane - गन्ना" "Cotton - कपास"
 )
 
-# Clothes
 declare -a clothes=(
-"T-shirt - टी-शर्ट" "Shirt - शर्ट" "Pants - पैंट" "Jeans - जीन्स" "Sweater - स्वेटर"
+  "Shirt - शर्ट" "Pants - पैंट" "Saree - साड़ी" "Suit - सूट" "T-shirt - टी-शर्ट"
 )
 
-# Classroom Things
 declare -a classroom_things=(
-"Board - बोर्ड" "Marker - मार्कर" "Pen - पेन" "Pencil - पेंसिल" "Eraser - रबड़"
+  "Desk - डेस्क" "Chair - कुर्सी" "Blackboard - ब्लैकबोर्ड" "Marker - मार्कर" "Eraser - रबड़"
 )
 
-# Kitchen Tools
 declare -a kitchen_tools=(
-"Spoon - चम्मच" "Knife - चाकू" "Fork - कांटा" "Plate - प्लेट" "Glass - गिलास"
+  "Knife - चाकू" "Fork - कांटा" "Spoon - चमच" "Pan - कढ़ाई" "Plate - थाली"
 )
 
-# Hospital Tools
 declare -a hospital_tools=(
-"Stethoscope - स्टेथोस्कोप" "Syringe - सिरिंज" "Thermometer - थर्मामीटर" 
-"Scalpel - चाकू" "Surgical Gloves - सर्जिकल दस्ताने"
+  "Syringe - सिरिंज" "Stethoscope - स्टेथोस्कोप" "Thermometer - थर्मामीटर"
+  "Bandage - पट्टी" "Scalpel - चाकू"
 )
 
-# Medicinal Plants
 declare -a medicinal_plants=(
-"Tulsi - तुलसी" "Neem - नीम" "Aloe Vera - एलोवेरा" "Ashwagandha - अश्वगंधा" 
-"Giloy - गिलोय"
+  "Tulsi - तुलसी" "Neem - नीम" "Aloe Vera - ऐलोवेरा" "Mint - पुदीना" "Ginger - अदरक"
 )
 
-# Oxygen-Producing Plants
 declare -a oxygen_plants=(
-"Snake Plant - सर्प पौधा" "Aloe Vera - एलोवेरा" "Spider Plant - माकड़ी पौधा"
-"Areca Palm - अरेका पाम" "Peace Lily - पीस लिली"
+  "Bamboo - बांस" "Aloe Vera - ऐलोवेरा" "Snake Plant - सांप पौधा" "Peace Lily - पीस लिली"
 )
 
-# Food Grains
 declare -a food_grains=(
-"Wheat - गेहूं" "Rice - चावल" "Barley - जौ" "Maize - मक्का" "Millet - बाजरा" 
-"Sorghum - ज्वार" "Ragi - रागी" "Oats - जई" "Quinoa - किनोआ" "Amaranth - रामदाना" 
-"Pulses - दालें" "Chickpeas - चना" "Lentils - मसूर" "Green Gram - मूंग" 
-"Black Gram - उड़द"
+  "Wheat - गेहूं" "Rice - चावल" "Barley - जौ" "Maize - मक्का" "Oats - ओट्स"
 )
 
-# Pet Animals
 declare -a pet_animals=(
-"Dog - कुत्ता" "Cat - बिल्ली" "Rabbit - खरगोश" "Parrot - तोता" "Pigeon - कबूतर"
-"Horse - घोड़ा" "Cow - गाय" "Goat - बकरी" "Sheep - भेड़" "Hen - मुर्गी"
+  "Dog - कुत्ता" "Cat - बिल्ली" "Rabbit - खरगोश" "Fish - मछली" "Hamster - हैम्स्टर"
 )
 
-# Wild Animals
 declare -a wild_animals=(
-"Lion - शेर" "Tiger - बाघ" "Elephant - हाथी" "Bear - भालू" "Leopard - तेंदुआ"
+  "Lion - शेर" "Tiger - बाघ" "Elephant - हाथी" "Leopard - तेंदुआ" "Bear - भालू"
 )
 
-# Terrestrial Animals
 declare -a terrestrial_animals=(
-"Cow - गाय" "Goat - बकरी" "Buffalo - भैंस" "Sheep - भेड़" "Camel - ऊंट"
-"Horse - घोड़ा" "Pig - सुअर" "Deer - हिरण" "Donkey - गधा" "Rabbit - खरगोश"
-"Fox - लोमड़ी" "Wolf - भेड़िया" "Elephant - हाथी" "Lion - शेर" "Tiger - बाघ"
-"Bear - भालू" "Rhinoceros - गेंडा" "Zebra - ज़ेबरा" "Giraffe - जिराफ"
-"Kangaroo - कंगारू"
+  "Dog - कुत्ता" "Cat - बिल्ली" "Horse - घोड़ा" "Goat - बकरी" "Sheep - भेड़"
 )
 
-# Aquatic Animals
 declare -a aquatic_animals=(
-"Fish - मछली" "Dolphin - डॉल्फिन" "Whale - व्हेल" "Shark - शार्क" "Octopus - ऑक्टोपस"
-"Crab - केकड़ा" "Jellyfish - जेलिफ़िश" "Sea Turtle - समुद्री कछुआ" 
-"Starfish - स्टारफिश" "Seal - सील" "Walrus - वालरस" "Penguin - पेंगुइन" 
-"Sea Horse - समुद्री घोड़ा" "Clam - सीप" "Squid - स्क्विड" 
-"Electric Eel - इलेक्ट्रिक ईल" "Sea Lion - समुद्री शेर" "Lobster - झींगा मछली"
-"Coral - प्रवाल" "Manatee - डुगोंग"
+  "Fish - मछली" "Shark - शार्क" "Whale - व्हेल" "Dolphin - डॉल्फिन" "Octopus - ऑक्टोपस"
 )
 
-# Aerial Animals
 declare -a aerial_animals=(
-"Eagle - चील" "Hawk - बाज" "Vulture - गिद्ध" "Falcon - बाज़" "Kite - पतंग"
-"Ostrich - शुतुरमुर्ग" "Peacock - मोर" "Parrot - तोता" "Crow - कौआ" "Pigeon - कबूतर"
-"Bat - चमगादड़" "Woodpecker - बांस कटनेवाला पक्षी" "Kingfisher - मछली पकड़नेवाला पक्षी"
-"Swallow - स्वैलो" "Cuckoo - कोयल" "Hornbill - गेंडा पक्षी" "Albatross - ऐल्बाट्रॉस"
-"Heron - बगुला" "Stork - सारस" "Flamingo - फ्लेमिंगो" 
-"Seagull - समुद्री गिल" "Pelican - पेलेट" "Turkey - टर्की" "Geese - हंस"
-"Sparrow - गौरेया" "Raven - कांव"
+  "Eagle - गरुड़" "Sparrow - गौरैया" "Parrot - तोता" "Hawk - बाज" "Owl - उल्लू"
 )
 
-# Poisonous Plants
 declare -a poisonous_plants=(
-"Deadly Nightshade - बेलाडोना" "Oleander - कनेर" "Foxglove - डिजिटलिस" "Castor Plant - अरंडी" 
-"Rhododendron - रोडोडेंड्रॉन" "Aconite - विषबेल" "Hemlock - हेमलॉक" "Daffodil - नर्सिसस" 
-"Autumn Crocus - शरद क्रोकस" "Lily of the Valley - लिली ऑफ द वैली" "Jimson Weed - जिमसन वीड" 
-"Yew - य्यू" "Angel’s Trumpet - एंजेल्स ट्रम्पेट" "Poppy - पोपी" "Buttercup - बटरकप" 
-"Chokecherry - चोकचेरी" "Sweetpea - स्वीट पी" "Water Hemlock - जल हेमलॉक" "White Snakeroot - व्हाइट स्नैकरूट" 
-"Poison Ivy - विषवृक्ष" "Poison Oak - विष ओक"
+  "Aconite - आकॉनाइट" "Oleander - कनेर" "Castor - अरंडी" "Belladonna - बेलाडोना"
 )
 
-# Wooden Objects
 declare -a wooden_objects=(
-"Table - मेज़" "Chair - कुर्सी" "Cabinet - अलमारी" "Shelf - शेल्फ" "Wooden Spoon - लकड़ी का चम्मच"
-"Wooden Bowl - लकड़ी का कटोरा" "Wooden Plank - लकड़ी की पट्टी" "Wooden Chair - लकड़ी की कुर्सी" 
-"Wooden Bed - लकड़ी का बिस्तर" "Wooden Box - लकड़ी का बॉक्स" 
-"Wooden Tray - लकड़ी की ट्रे" "Wooden Frame - लकड़ी का फ्रेम" "Wooden Rack - लकड़ी की रैक" 
-"Wooden Cup - लकड़ी कप" "Wooden Plate - लकड़ी की प्लेट" "Wooden Stool - लकड़ी की स्टूल" 
-"Wooden Bench - लकड़ी की बेंच" "Wooden Door - लकड़ी का दरवाजा" "Wooden Window - लकड़ी की खिड़की" 
-"Wooden Block - लकड़ी का ब्लॉक" "Wooden Cart - लकड़ी की गाड़ी"
+  "Table - मेज" "Chair - कुर्सी" "Cabinet - अलमारी" "Bed - बिस्तर" "Door - दरवाजा"
 )
 
-# Transport Meaning
-declare -a transport_meaning=(
-"Transport refers to the movement of goods or people from one place to another using various vehicles such as cars, buses, bicycles, trains, ships, or airplanes."
-)
-
-# Means of Transport Vehicles
 declare -a transport_vehicles=(
-"Car - कार" "Bus - बस" "Train - ट्रेन" "Bicycle - साइकिल" "Ship - जहाज"
-"Airplane - हवाई जहाज" "Truck - ट्रक" "Motorcycle - मोटरसाइकिल" "Rickshaw - रिक्शा"
-"Helicopter - हेलीकॉप्टर" "Boat - नाव" "Submarine - पनडुब्बी" "Tram - ट्राम" "Scooter - स्कूटर"
-"Skateboard - स्केटबोर्ड" "Horse Cart - घोड़े की गाड़ी" "Cable Car - केबल कार" 
-"Hot Air Balloon - हॉट एयर बैलून" "Segway - सेगवे" "Lorry - लॉरी"
+  "Transport - refers to the movement of goods or people from one place to another using various vehicles such as cars, buses, bicycles, trains, ships, or airplanes."
+  "Car - कार" "Bus - बस" "Train - ट्रेन" "Bicycle - साइकिल" "Ship - जहाज"
+  "Airplane - हवाई जहाज" "Truck - ट्रक" "Motorcycle - मोटरसाइकिल" "Rickshaw - रिक्शा"
+  "Helicopter - हेलीकॉप्टर" "Boat - नाव" "Submarine - पनडुब्बी" "Tram - ट्राम" "Scooter - स्कूटर"
+  "Skateboard - स्केटबोर्ड" "Horse Cart - घोड़े की गाड़ी" "Cable Car - केबल कार"
+  "Hot Air Balloon - हॉट एयर बैलून" "Segway - सेगवे" "Lorry - लॉरी"
 )
 
-# Function to display vocabulary list
+# Function to show the vocabulary list
 show_vocabulary() {
-  echo "Vocabulary for $1:"
-  for word in "${!2}"; do
-    echo "- $word"
+  category=$1
+  shift
+  echo -e "\n$category Vocabulary:"
+  for word in "$@"; do
+    echo "$word"
   done
-  echo "Press any key to go back..."
-  read -n 1
+  echo ""
+  read -p "Press any key to go back to the main menu..." -n1 -s
   show_main_menu
 }
 
 # Main menu
 show_main_menu() {
+  clear
   echo "Select a category:"
   echo "1. Opposites"
   echo "2. Masculine to Feminine"
@@ -236,40 +174,40 @@ show_main_menu() {
   echo "25. Aerial Animals"
   echo "26. Poisonous Plants"
   echo "27. Wooden Objects"
-  echo "28. Transport Meaning"
+  echo "28. Transport"
   echo "29. Means of Transport Vehicles"
   echo "30. Exit"
   read -p "Select an option: " option
   case $option in
-    1) show_vocabulary "Opposites" english_opposites[@] ;;
-    2) show_vocabulary "Masculine to Feminine" masculine_feminine[@] ;;
-    3) show_vocabulary "Pots Names" pots_names[@] ;;
-    4) show_vocabulary "Flowers" flowers[@] ;;
-    5) show_vocabulary "Body Parts" body_parts[@] ;;
-    6) show_vocabulary "Days of the Week" days[@] ;;
-    7) show_vocabulary "Months of the Year" months[@] ;;
-    8) show_vocabulary "Colors" colors[@] ;;
-    9) show_vocabulary "Vegetables" vegetables[@] ;;
-    10) show_vocabulary "Fruits" fruits[@] ;;
-    11) show_vocabulary "Birds" birds[@] ;;
-    12) show_vocabulary "Metals" metals[@] ;;
-    13) show_vocabulary "Crops" crops[@] ;;
-    14) show_vocabulary "Clothes" clothes[@] ;;
-    15) show_vocabulary "Classroom Things" classroom_things[@] ;;
-    16) show_vocabulary "Kitchen Tools" kitchen_tools[@] ;;
-    17) show_vocabulary "Hospital Tools" hospital_tools[@] ;;
-    18) show_vocabulary "Medicinal Plants" medicinal_plants[@] ;;
-    19) show_vocabulary "Oxygen-Producing Plants" oxygen_plants[@] ;;
-    20) show_vocabulary "Food Grains" food_grains[@] ;;
-    21) show_vocabulary "Pet Animals" pet_animals[@] ;;
-    22) show_vocabulary "Wild Animals" wild_animals[@] ;;
-    23) show_vocabulary "Terrestrial Animals" terrestrial_animals[@] ;;
-    24) show_vocabulary "Aquatic Animals" aquatic_animals[@] ;;
-    25) show_vocabulary "Aerial Animals" aerial_animals[@] ;;
-    26) show_vocabulary "Poisonous Plants" poisonous_plants[@] ;;
-    27) show_vocabulary "Wooden Objects" wooden_objects[@] ;;
-    28) show_vocabulary "Transport Meaning" transport_meaning[@] ;;
-    29) show_vocabulary "Means of Transport Vehicles" transport_vehicles[@] ;;
+    1) show_vocabulary "Opposites" "${english_opposites[@]}" ;;
+    2) show_vocabulary "Masculine to Feminine" "${masculine_feminine[@]}" ;;
+    3) show_vocabulary "Pots Names" "${pots_names[@]}" ;;
+    4) show_vocabulary "Flowers" "${flowers[@]}" ;;
+    5) show_vocabulary "Body Parts" "${body_parts[@]}" ;;
+    6) show_vocabulary "Days of the Week" "${days[@]}" ;;
+    7) show_vocabulary "Months of the Year" "${months[@]}" ;;
+    8) show_vocabulary "Colors" "${colors[@]}" ;;
+    9) show_vocabulary "Vegetables" "${vegetables[@]}" ;;
+    10) show_vocabulary "Fruits" "${fruits[@]}" ;;
+    11) show_vocabulary "Birds" "${birds[@]}" ;;
+    12) show_vocabulary "Metals" "${metals[@]}" ;;
+    13) show_vocabulary "Crops" "${crops[@]}" ;;
+    14) show_vocabulary "Clothes" "${clothes[@]}" ;;
+    15) show_vocabulary "Classroom Things" "${classroom_things[@]}" ;;
+    16) show_vocabulary "Kitchen Tools" "${kitchen_tools[@]}" ;;
+    17) show_vocabulary "Hospital Tools" "${hospital_tools[@]}" ;;
+    18) show_vocabulary "Medicinal Plants" "${medicinal_plants[@]}" ;;
+    19) show_vocabulary "Oxygen-Producing Plants" "${oxygen_plants[@]}" ;;
+    20) show_vocabulary "Food Grains" "${food_grains[@]}" ;;
+    21) show_vocabulary "Pet Animals" "${pet_animals[@]}" ;;
+    22) show_vocabulary "Wild Animals" "${wild_animals[@]}" ;;
+    23) show_vocabulary "Terrestrial Animals" "${terrestrial_animals[@]}" ;;
+    24) show_vocabulary "Aquatic Animals" "${aquatic_animals[@]}" ;;
+    25) show_vocabulary "Aerial Animals" "${aerial_animals[@]}" ;;
+    26) show_vocabulary "Poisonous Plants" "${poisonous_plants[@]}" ;;
+    27) show_vocabulary "Wooden Objects" "${wooden_objects[@]}" ;;
+    28) show_vocabulary "Transport" "${transport_vehicles[@]}" ;;  # New category option
+    29) show_vocabulary "Means of Transport Vehicles" "${transport_vehicles[@]}" ;;
     30) exit ;;
     *) echo "Invalid option, try again." ;;
   esac
