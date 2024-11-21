@@ -1,17 +1,17 @@
-# General Shapes with ASCII Art
+# General Shapes with ASCII Art and Hindi Meanings
 declare -a shapes=(
-"Circle:\n   ***   \n *     * \n*       *\n *     * \n   ***   "
-"Square:\n*******\n*     *\n*     *\n*     *\n*******"
-"Rectangle:\n***********\n*         *\n*         *\n***********"
-"Triangle:\n    *    \n   * *   \n  *   *  \n *     * \n*********"
-"Pentagon:\n    *    \n   * *   \n  *   *  \n *     * \n*********"
-"Hexagon:\n   ****   \n  *    *  \n *      * \n  *    *  \n   ****   "
+"Circle: (वृत्त)\n   ***   \n *     * \n*       *\n *     * \n   ***   "
+"Square: (वर्ग)\n*******\n*     *\n*     *\n*     *\n*******"
+"Rectangle: (आयत)\n***********\n*         *\n*         *\n***********"
+"Triangle: (त्रिकोण)\n    *    \n   * *   \n  *   *  \n *     * \n*********"
+"Pentagon: (पेंटागन)\n    *    \n   * *   \n  *   *  \n *     * \n*********"
+"Hexagon: (षट्कोण)\n   ****   \n  *    *  \n *      * \n  *    *  \n   ****   "
 )
 
-# Function to display shapes
+# Function to display shapes with Hindi meanings
 show_shapes() {
   clear
-  echo "Types of General Shapes with ASCII Art"
+  echo "Types of General Shapes with ASCII Art and Hindi Meanings"
   for shape in "${shapes[@]}"; do
     echo -e "$shape"
     echo ""
