@@ -128,33 +128,49 @@ declare -a pet_animals=(
 # Wild Animals
 declare -a wild_animals=(
 "Lion - शेर" "Tiger - बाघ" "Elephant - हाथी" "Bear - भालू" "Leopard - तेंदुआ"
-"Giraffe - जिराफ" "Zebra - ज़ेबरा" "Rhinoceros - गेंडा" "Deer - हिरण" "Fox - लोमड़ी"
-"Hyena - लकड़बग्घा" "Wolf - भेड़िया" "Cheetah - चीता" "Crocodile - मगरमच्छ"
-"Python - अजगर" "Kangaroo - कंगारू" "Panda - पांडा" "Gorilla - गोरिल्ला"
-"Chimpanzee - चिंपांज़ी" "Hippopotamus - दरियाई घोड़ा" "Koala - कोआला"
-"Jaguar - जैगुआर" "Ostrich - शुतुरमुर्ग" "Peacock - मोर" "Antelope - मृग"
-"Moose - मूज" "Bison - जंगली सांड" "Porcupine - साही" "Eagle - चील"
-"Hawk - बाज़"
 )
 
-# Function to show vocabulary
+# Terrestrial Animals
+declare -a terrestrial_animals=(
+"Cow - गाय" "Goat - बकरी" "Buffalo - भैंस" "Sheep - भेड़" "Camel - ऊंट"
+"Horse - घोड़ा" "Pig - सुअर" "Deer - हिरण" "Donkey - गधा" "Rabbit - खरगोश"
+"Fox - लोमड़ी" "Wolf - भेड़िया" "Elephant - हाथी" "Lion - शेर" "Tiger - बाघ"
+"Bear - भालू" "Rhinoceros - गेंडा" "Zebra - ज़ेबरा" "Giraffe - जिराफ"
+"Kangaroo - कंगारू"
+)
+
+# Aquatic Animals
+declare -a aquatic_animals=(
+"Fish - मछली" "Dolphin - डॉल्फिन" "Whale - व्हेल" "Shark - शार्क" "Octopus - ऑक्टोपस"
+"Crab - केकड़ा" "Jellyfish - जेलिफ़िश" "Sea Turtle - समुद्री कछुआ" 
+"Starfish - स्टारफिश" "Seal - सील" "Walrus - वालरस" "Penguin - पेंगुइन" 
+"Sea Horse - समुद्री घोड़ा" "Clam - सीप" "Squid - स्क्विड" 
+"Electric Eel - इलेक्ट्रिक ईल" "Sea Lion - समुद्री शेर" "Lobster - झींगा मछली"
+"Coral - प्रवाल" "Manatee - डुगोंग"
+)
+
+# Aerial Animals
+declare -a aerial_animals=(
+"Eagle - चील" "Hawk - बाज" "Vulture - गिद्ध" "Falcon - बाज़" "Kite - पतंग"
+"Ostrich - शुतुरमुर्ग" "Peacock - मोर" "Parrot - तोता" "Crow - कौआ" "Pigeon - कबूतर"
+"Bat - चमगादड़" "Woodpecker - बांस कटनेवाला पक्षी" "Kingfisher - मछली पकड़नेवाला पक्षी"
+"Swallow - स्वैलो" "Cuckoo - कोयल" "Hornbill - गेंडा पक्षी" "Albatross - ऐल्बाट्रॉस"
+"Heron - बगुला" "Stork - सारस" "Flamingo - फ्लेमिंगो" 
+"Seagull - समुद्री गिल" "Pelican - पेलेट" "Turkey - टर्की" "Geese - हंस"
+"Sparrow - गौरेया" "Raven - काव" "Turkey - टर्की" "Condor - कोंडोर" "Swallowtail - स्वालो टेल"
+)
+
+# Function to display vocabulary list
 show_vocabulary() {
-  title=$1
-  declare -a list1=("${!2}")
-  clear
-  echo "$title"
-  echo "--------------------------------------------------"
-  for item in "${list1[@]}"; do
-    echo "$item"
+  echo "Vocabulary for $1:"
+  for word in "${!2}"; do
+    echo "- $word"
   done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
 }
 
 # Main menu
 show_main_menu() {
-  clear
-  echo "Vocabulary Lists"
+  echo "Select a category:"
   echo "1. Opposites"
   echo "2. Masculine to Feminine"
   echo "3. Pots Names"
@@ -177,9 +193,11 @@ show_main_menu() {
   echo "20. Food Grains"
   echo "21. Pet Animals"
   echo "22. Wild Animals"
-  echo "23. Exit"
-  read -p "Please select an option: " option
-
+  echo "23. Terrestrial Animals"
+  echo "24. Aquatic Animals"
+  echo "25. Aerial Animals"
+  echo "26. Exit"
+  read -p "Select an option: " option
   case $option in
     1) show_vocabulary "Opposites" english_opposites[@] ;;
     2) show_vocabulary "Masculine to Feminine" masculine_feminine[@] ;;
@@ -203,7 +221,10 @@ show_main_menu() {
     20) show_vocabulary "Food Grains" food_grains[@] ;;
     21) show_vocabulary "Pet Animals" pet_animals[@] ;;
     22) show_vocabulary "Wild Animals" wild_animals[@] ;;
-    23) exit ;;
+    23) show_vocabulary "Terrestrial Animals" terrestrial_animals[@] ;;
+    24) show_vocabulary "Aquatic Animals" aquatic_animals[@] ;;
+    25) show_vocabulary "Aerial Animals" aerial_animals[@] ;;
+    26) exit ;;
     *) echo "Invalid option, try again." ;;
   esac
 }
