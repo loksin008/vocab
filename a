@@ -157,7 +157,7 @@ declare -a aerial_animals=(
 "Swallow - स्वैलो" "Cuckoo - कोयल" "Hornbill - गेंडा पक्षी" "Albatross - ऐल्बाट्रॉस"
 "Heron - बगुला" "Stork - सारस" "Flamingo - फ्लेमिंगो" 
 "Seagull - समुद्री गिल" "Pelican - पेलेट" "Turkey - टर्की" "Geese - हंस"
-"Sparrow - गौरेया" "Raven - काव"
+"Sparrow - गौरेया" "Raven - कांव"
 )
 
 # Poisonous Plants
@@ -184,6 +184,15 @@ declare -a wooden_objects=(
 # Transport Meaning
 declare -a transport_meaning=(
 "Transport refers to the movement of goods or people from one place to another using various vehicles such as cars, buses, bicycles, trains, ships, or airplanes."
+)
+
+# Means of Transport Vehicles
+declare -a transport_vehicles=(
+"Car - कार" "Bus - बस" "Train - ट्रेन" "Bicycle - साइकिल" "Ship - जहाज"
+"Airplane - हवाई जहाज" "Truck - ट्रक" "Motorcycle - मोटरसाइकिल" "Rickshaw - रिक्शा"
+"Helicopter - हेलीकॉप्टर" "Boat - नाव" "Submarine - पनडुब्बी" "Tram - ट्राम" "Scooter - स्कूटर"
+"Skateboard - स्केटबोर्ड" "Horse Cart - घोड़े की गाड़ी" "Cable Car - केबल कार" 
+"Hot Air Balloon - हॉट एयर बैलून" "Segway - सेगवे" "Lorry - लॉरी"
 )
 
 # Function to display vocabulary list
@@ -228,7 +237,8 @@ show_main_menu() {
   echo "26. Poisonous Plants"
   echo "27. Wooden Objects"
   echo "28. Transport Meaning"
-  echo "29. Exit"
+  echo "29. Means of Transport Vehicles"
+  echo "30. Exit"
   read -p "Select an option: " option
   case $option in
     1) show_vocabulary "Opposites" english_opposites[@] ;;
@@ -259,7 +269,8 @@ show_main_menu() {
     26) show_vocabulary "Poisonous Plants" poisonous_plants[@] ;;
     27) show_vocabulary "Wooden Objects" wooden_objects[@] ;;
     28) show_vocabulary "Transport Meaning" transport_meaning[@] ;;
-    29) exit ;;
+    29) show_vocabulary "Means of Transport Vehicles" transport_vehicles[@] ;;
+    30) exit ;;
     *) echo "Invalid option, try again." ;;
   esac
 }
