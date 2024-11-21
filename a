@@ -157,7 +157,17 @@ declare -a aerial_animals=(
 "Swallow - स्वैलो" "Cuckoo - कोयल" "Hornbill - गेंडा पक्षी" "Albatross - ऐल्बाट्रॉस"
 "Heron - बगुला" "Stork - सारस" "Flamingo - फ्लेमिंगो" 
 "Seagull - समुद्री गिल" "Pelican - पेलेट" "Turkey - टर्की" "Geese - हंस"
-"Sparrow - गौरेया" "Raven - काव" "Turkey - टर्की" "Condor - कोंडोर" "Swallowtail - स्वालो टेल"
+"Sparrow - गौरेया" "Raven - काव"
+)
+
+# Poisonous Plants
+declare -a poisonous_plants=(
+"Deadly Nightshade - बेलाडोना" "Oleander - कनेर" "Foxglove - डिजिटलिस" "Castor Plant - अरंडी" 
+"Rhododendron - रोडोडेंड्रॉन" "Aconite - विषबेल" "Hemlock - हेमलॉक" "Daffodil - नर्सिसस" 
+"Autumn Crocus - शरद क्रोकस" "Lily of the Valley - लिली ऑफ द वैली" "Jimson Weed - जिमसन वीड" 
+"Yew - य्यू" "Angel’s Trumpet - एंजेल्स ट्रम्पेट" "Poppy - पोपी" "Buttercup - बटरकप" 
+"Chokecherry - चोकचेरी" "Sweetpea - स्वीट पी" "Water Hemlock - जल हेमलॉक" "White Snakeroot - व्हाइट स्नैकरूट" 
+"Poison Ivy - विषवृक्ष" "Poison Oak - विष ओक"
 )
 
 # Function to display vocabulary list
@@ -166,6 +176,9 @@ show_vocabulary() {
   for word in "${!2}"; do
     echo "- $word"
   done
+  echo "Press any key to go back..."
+  read -n 1
+  show_main_menu
 }
 
 # Main menu
@@ -196,7 +209,8 @@ show_main_menu() {
   echo "23. Terrestrial Animals"
   echo "24. Aquatic Animals"
   echo "25. Aerial Animals"
-  echo "26. Exit"
+  echo "26. Poisonous Plants"
+  echo "27. Exit"
   read -p "Select an option: " option
   case $option in
     1) show_vocabulary "Opposites" english_opposites[@] ;;
@@ -224,7 +238,8 @@ show_main_menu() {
     23) show_vocabulary "Terrestrial Animals" terrestrial_animals[@] ;;
     24) show_vocabulary "Aquatic Animals" aquatic_animals[@] ;;
     25) show_vocabulary "Aerial Animals" aerial_animals[@] ;;
-    26) exit ;;
+    26) show_vocabulary "Poisonous Plants" poisonous_plants[@] ;;
+    27) exit ;;
     *) echo "Invalid option, try again." ;;
   esac
 }
