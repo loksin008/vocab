@@ -97,6 +97,16 @@ declare -a clothes=(
 "Vest - बनियान" "Overcoat - ओवरकोट" "Raincoat - रेनकोट" "Lehenga - लहंगा" "Sherwani - शेरवानी"
 )
 
+# Classroom Things
+declare -a classroom_things=(
+"Desk - डेस्क" "Chair - कुर्सी" "Board - बोर्ड" "Chalk - चाक" "Duster - डस्टर"
+"Notebook - नोटबुक" "Pen - कलम" "Pencil - पेंसिल" "Eraser - रबर" "Sharpener - शार्पनर"
+"Ruler - पैमाना" "Bag - बैग" "Books - किताबें" "Map - नक्शा" "Globe - ग्लोब"
+"Projector - प्रोजेक्टर" "Screen - स्क्रीन" "Marker - मार्कर" "Calculator - कैलकुलेटर" "Computer - कंप्यूटर"
+"Clock - घड़ी" "Paper - कागज" "Scissors - कैंची" "Water Bottle - पानी की बोतल" "Files - फाइलें"
+"Stapler - स्टेपलर" "Printer - प्रिंटर" "Curtains - पर्दे" "Dustbin - कूड़ेदान" "Lights - लाइट्स"
+)
+
 # Function to display the vocabulary list
 show_vocabulary() {
   local category=$1
@@ -133,7 +143,8 @@ show_main_menu() {
   echo "13. Crops"
   echo "14. Verbs"
   echo "15. Clothes"
-  echo "16. Exit"
+  echo "16. Classroom Things"
+  echo "17. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -152,7 +163,8 @@ show_main_menu() {
     13) show_vocabulary "Crops" "crops" "crops" ;;
     14) show_vocabulary "Verbs" "verbs" "verbs" ;;
     15) show_vocabulary "Clothes" "clothes" "clothes" ;;
-    16) exit 0 ;;
+    16) show_vocabulary "Classroom Things" "classroom_things" "classroom_things" ;;
+    17) exit 0 ;;
     *) 
       echo "Invalid option, please try again."
       read -p "Press any key to return to the main menu..." anykey
