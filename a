@@ -180,61 +180,23 @@ declare -a indian_festivals=(
 "Diwali - दीपावली" "New Year - नया साल" "Gurpurab - गुरपुरब"
 )
 
-# Function to display shapes with meanings and ASCII Art
-show_shapes() {
+# Function to display millets
+show_millets() {
   clear
-  echo "Shapes and their Hindi Meanings"
-  for shape in "${shapes[@]}"; do
-    echo "$shape"
-  done
-
-  echo "Circle - वृत्त"
-  for line in "${circle[@]}"; do
-    echo "$line"
-  done
-  echo "Square - वर्ग"
-  for line in "${square[@]}"; do
-    echo "$line"
-  done
-  echo "Triangle - त्रिकोण"
-  for line in "${triangle[@]}"; do
-    echo "$line"
-  done
-  echo "Rectangle - आयत"
-  for line in "${rectangle[@]}"; do
-    echo "$line"
-  done
-  echo "Oval - अंडाकार"
-  for line in "${oval[@]}"; do
-    echo "$line"
-  done
-  echo "Hexagon - षट्कोण"
-  for line in "${hexagon[@]}"; do
-    echo "$line"
-  done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
-}
-
-# Function to display planet details
-show_planets() {
-  clear
-  echo "Planets and the Sun"
+  echo "Millets in Hindi and English"
   echo "--------------------------------------------------"
-  for planet in "${planets[@]}"; do
-    echo "$planet"
-  done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
-}
-
-# Function to display Indian Festivals
-show_festivals() {
-  clear
-  echo "Indian Festivals"
-  echo "--------------------------------------------------"
-  for festival in "${indian_festivals[@]}"; do
-    echo "$festival"
+  declare -a millets=(
+    "Jowar - ज्वार" "Bajra - बाजरा" "Ragi - रागी" "Foxtail Millet - कंगनी"
+    "Little Millet - कुटकी" "Barnyard Millet - संवा" "Kodo Millet - कोदो" "Proso Millet - चम्बा"
+    "Finger Millet - मूंगफली" "Sorghum - सॉरघम" "Peal Millet - दलहनी"
+    "Maize - मक्का" "Chickpea - चना" "Horsegram - कुल्थी" "Lentil - मसूर"
+    "Soybean - सोयाबीन" "Mung - मूंग" "Blackgram - उड़द" "Sesame - तिल"
+    "Mustard - सरसों" "Groundnut - मूँगफली" "Pulses - दाल" "Oats - जई"
+    "Barley - जौ" "Rice - चावल" "Wheat - गेहूं" "Pulses - दाल"
+    "Coriander - धनिया" "Cumin - जीरा" "Fenugreek - मेथी"
+  )
+  for millet in "${millets[@]}"; do
+    echo "$millet"
   done
   read -p "Press any key to return to the main menu..." anykey
   show_main_menu
@@ -262,7 +224,8 @@ show_main_menu() {
   echo "16. Shapes"
   echo "17. Planets and the Sun"
   echo "18. Indian Festivals"
-  echo "19. Exit"
+  echo "19. Millets"
+  echo "20. Exit"
   read -p "Please select an option: " option
 
   case $option in
@@ -284,7 +247,8 @@ show_main_menu() {
     16) show_shapes ;;
     17) show_planets ;;
     18) show_festivals ;;
-    19) exit 0 ;;
+    19) show_millets ;;
+    20) exit 0 ;;
     *) 
       echo "Invalid option, please try again."
       read -p "Press any key to return to the main menu..." anykey
