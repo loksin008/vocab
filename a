@@ -174,9 +174,8 @@ show_main_menu() {
   echo "25. Aerial Animals"
   echo "26. Poisonous Plants"
   echo "27. Wooden Objects"
-  echo "28. Transport"
-  echo "29. Means of Transport Vehicles"
-  echo "30. Exit"
+  echo "28. Transport"  # Updated option
+  echo "29. Exit"
   read -p "Select an option: " option
   case $option in
     1) show_vocabulary "Opposites" "${english_opposites[@]}" ;;
@@ -206,9 +205,8 @@ show_main_menu() {
     25) show_vocabulary "Aerial Animals" "${aerial_animals[@]}" ;;
     26) show_vocabulary "Poisonous Plants" "${poisonous_plants[@]}" ;;
     27) show_vocabulary "Wooden Objects" "${wooden_objects[@]}" ;;
-    28) show_vocabulary "Transport" "${transport_vehicles[@]}" ;;  # New category option
-    29) show_vocabulary "Means of Transport Vehicles" "${transport_vehicles[@]}" ;;
-    30) exit ;;
+    28) show_vocabulary "Transport" "${transport_vehicles[@]}" ;;  # Transport category
+    29) exit ;;
     *) echo "Invalid option, try again." ;;
   esac
 }
