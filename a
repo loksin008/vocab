@@ -76,164 +76,82 @@ declare -a metals=(
 declare -a crops=(
 "Wheat - गेहूं" "Rice - चावल" "Corn - मक्का" "Sugarcane - गन्ना" "Cotton - कपास"
 "Barley - जौ" "Oats - जई" "Mustard - सरसों" "Soybean - सोयाबीन" "Peas - मटर"
-"Chili - मिर्च" "Groundnut - मूंगफली" "Sunflower - सूरजमुखी" "Sesame - तिल"
-"Tea - चाय" "Coffee - कॉफी" "Lentil - दाल" "Pineapple - अनानास" "Papaya - पपीता"
-"Guava - अमरूद" "Jackfruit - कटहल"
 )
 
 # Clothes
 declare -a clothes=(
 "T-shirt - टी-शर्ट" "Shirt - शर्ट" "Pants - पैंट" "Jeans - जीन्स" "Sweater - स्वेटर"
-"Jacket - जैकेट" "Coat - कोट" "Dress - ड्रेस" "Skirt - स्कर्ट" "Shorts - शॉर्ट्स"
-"Suit - सूट" "Blouse - ब्लाउज़" "Sari - साड़ी" "Shawl - शॉल" "Cap - टोपी"
-"Scarf - स्कार्फ" "Gloves - दस्ताने" "Shoes - जूते" "Sandals - चप्पल" "Boots - बूट"
-"Belt - बेल्ट" "Tie - टाई" "Hat - हैट" "Sweatshirt - स्वेटशर्ट" "Kurta - कुर्ता"
-"Chudidar - चूड़ीदार" "Dupatta - दुपट्टा" "Lingerie - लिंजरी" "Nightgown - नाइटगाउन"
 )
 
 # Classroom Things
 declare -a classroom_things=(
 "Board - बोर्ड" "Marker - मार्कर" "Pen - पेन" "Pencil - पेंसिल" "Eraser - रबड़"
-"Book - किताब" "Notebook - नोटबुक" "Chalk - खड़िया" "Desk - डेस्क" "Chair - कुर्सी"
-"Table - मेज़" "Ruler - पैमाना" "Sharpener - शार्पनर" "Bag - बैग" "Globe - ग्लोब"
-"Map - नक़्शा" "Clock - घड़ी" "Computer - कंप्यूटर" "Projector - प्रक्षिप्त"
-"Trash Can - कूड़ेदान"
-)
-
-# Shapes and Hindi meanings with ASCII Art
-shapes=("Circle - वृत्त"
-        "Square - वर्ग"
-        "Triangle - त्रिकोण"
-        "Rectangle - आयत"
-        "Oval - अंडाकार"
-        "Hexagon - षट्कोण")
-
-# ASCII art for shapes
-circle=(
-"   ****   "
-" *      * "
-"*        *"
-" *      * "
-"   ****   "
-)
-
-square=(
-"*********"
-"*       *"
-"*       *"
-"*       *"
-"*********"
-)
-
-triangle=(
-"     *     "
-"    * *    "
-"   *   *   "
-"  *     *  "
-" ********* "
-)
-
-rectangle=(
-"*************"
-"*           *"
-"*           *"
-"*************"
-)
-
-oval=(
-"    ****    "
-"  *      *  "
-" *        * "
-"  *      *  "
-"    ****    "
-)
-
-hexagon=(
-"   ******   "
-"  *      *  "
-" *        * "
-"  *      *  "
-"   ******   "
-)
-
-# Planet Details
-planets=(
-"Sun: The center of our solar system. It is a star, not a planet. It provides heat and light necessary for life on Earth."
-"Mercury: The closest planet to the Sun. It is small, rocky, and has extreme temperatures."
-"Venus: Known as Earth's twin due to its similar size. It has a thick atmosphere and is the hottest planet."
-"Earth: Our home planet. It is the only known planet to support life. It has water, a breathable atmosphere, and diverse ecosystems."
-"Mars: Known as the Red Planet due to its reddish appearance. It has the largest volcano and the deepest, longest valley in the solar system."
-"Jupiter: The largest planet in the solar system. It is a gas giant with a Great Red Spot, a storm that has been raging for hundreds of years."
-"Saturn: Known for its stunning ring system made of ice and rock. It is a gas giant and has many moons."
-"Uranus: A cold, gas giant with a tilted axis, causing extreme seasons. It is unique for rotating on its side."
-"Neptune: The furthest planet from the Sun. It is a gas giant known for its striking blue color and strong winds."
-)
-
-# Indian Festivals in Hindi and English
-declare -a indian_festivals=(
-"Diwali - दीपावली" "Holi - होली" "Dussehra - दशहरा" "Navratri - नवरात्रि" "Raksha Bandhan - रक्षाबंधन"
-"Durga Puja - दुर्गा पूजा" "Eid al-Fitr - ईद उल-फित्र" "Eid al-Adha - ईद उल-अधा" "Christmas - क्रिसमस" "Makar Sankranti - मकर संक्रांति"
-"Ganesh Chaturthi - गणेश चतुर्थी" "Onam - ओणम" "Lohri - लोहड़ी" "Baisakhi - बैसाखी" "Karva Chauth - करवा चौथ"
-"Janmashtami - जन्माष्टमी" "Pongal - पोंगल" "Good Friday - गुड फ्राइडे" "Independence Day - स्वतंत्रता दिवस"
-)
-
-# Millets
-declare -a millets=(
-"Jowar - जोवार" "Bajra - बाजरा" "Ragi - रागी" "Kodo millet - कोदो"
-"Little millet - कुटकी" "Foxtail millet - कंगनी" "Barnyard millet - संया" "Proso millet - चीनी"
 )
 
 # Kitchen Tools
 declare -a kitchen_tools=(
-"Knife - चाकू" "Spoon - चमच" "Fork - कांटा" "Plate - थाली" "Glass - गिलास"
-"Pan - तवा" "Pot - बर्तन" "Chopping Board - चॉपिंग बोर्ड" "Grater - कद्दूकस" "Strainer - छाननेवाला"
-"Peeler - छिलनेवाला" "Ladle - करछुल" "Rolling Pin - बेलन" "Tongs - चिमटा" "Whisk - फेंटनेवाला"
-"Spatula - स्पैचुला" "Mixer - मिक्सर" "Blender - ब्लेंडर" "Toaster - टोस्टर" "Rice Cooker - राइस कुकर"
-"Microwave - माइक्रोवेव" "Pressure Cooker - प्रेशर कुकर" "Frying Pan - फ्राइंग पैन" "Steamer - स्टीमर" "Grill - ग्रिल"
-"Mortar and Pestle - सिल-बट्टा" "Measuring Cup - मापने का कप" "Bowl - कटोरी" "Tray - ट्रे" "Cutting Knife - कटिंग चाकू"
-"Can Opener - कैन ओपनर" "Peeler - छिलनेवाला"
+"Spoon - चम्मच" "Knife - चाकू" "Fork - कांटा" "Plate - प्लेट" "Glass - गिलास"
 )
 
 # Hospital Tools
 declare -a hospital_tools=(
-"Stethoscope - स्टेथोस्कोप" "Syringe - सिरिंज" "Thermometer - थर्मामीटर" "Blood Pressure Monitor - रक्तचाप मॉनीटर"
-"Scalpel - सर्जरी चाकू" "Bandage - पट्टी" "Gloves - दस्ताने" "IV Drip - IV ड्रिप" "Oxygen Mask - ऑक्सीजन मास्क"
-"Defibrillator - डिफिब्रिलेटर" "Stretcher - स्ट्रेचर" "Wheelchair - व्हीलचेयर" "Surgical Mask - सर्जिकल मास्क"
-"Antiseptic - एंटीसेप्टिक" "Tongue Depressor - जीभ दबाने वाला" "Sutures - सिलाई" "Cotton Balls - कॉटन बॉल्स"
-"Pulse Oximeter - पल्स ऑक्सीमीटर" "Surgical Scissors - सर्जिकल कैंची" "Nebulizer - नेब्युलाइज़र" "Laryngoscope - लैरींगोस्कोप"
+"Stethoscope - स्टेथोस्कोप" "Syringe - सिरिंज" "Thermometer - थर्मामीटर" 
+"Scalpel - चाकू" "Surgical Gloves - सर्जिकल दस्ताने"
 )
 
 # Medicinal Plants
 declare -a medicinal_plants=(
-"Aloe Vera - एलोवेरा" "Tulsi - तुलसी" "Neem - नीम" "Ginger - अदरक" "Garlic - लहसुन"
-"Mint - पुदीना" "Ashwagandha - अश्वगंधा" "Turmeric - हल्दी" "Basil - तुलसी" "Cinnamon - दारचीनी"
-"Giloy - गिलोय" "Brahmi - ब्राह्मी" "Eucalyptus - नीलगिरी" "Coriander - धनिया" "Fenugreek - मेथी"
-"Jatamansi - जातामांसी" "Amla - आंवला" "Sarpagandha - सर्पगंधा" "Shatavari - शतावरी" "Moringa - सहजन"
+"Tulsi - तुलसी" "Neem - नीम" "Aloe Vera - एलोवेरा" "Ashwagandha - अश्वगंधा" 
+"Giloy - गिलोय"
 )
 
 # Oxygen-Producing Plants
 declare -a oxygen_plants=(
-"Snake Plant - साँप का पौधा" "Aloe Vera - एलोवेरा" "Spider Plant - मकड़ी का पौधा" "Peace Lily - पीस लिली"
-"Areca Palm - अरेका पाम"
+"Snake Plant - सर्प पौधा" "Aloe Vera - एलोवेरा" "Spider Plant - माकड़ी पौधा"
+"Areca Palm - अरेका पाम" "Peace Lily - पीस लिली"
 )
 
-# Function to display vocabulary lists
-show_vocabulary() {
-  category=$1
-  english_array=("${!2}")
-  hindi_array=("${!3}")
+# Food Grains
+declare -a food_grains=(
+"Wheat - गेहूं" "Rice - चावल" "Barley - जौ" "Maize - मक्का" "Millet - बाजरा" 
+"Sorghum - ज्वार" "Ragi - रागी" "Oats - जई" "Quinoa - किनोआ" "Amaranth - रामदाना" 
+"Pulses - दालें" "Chickpeas - चना" "Lentils - मसूर" "Green Gram - मूंग" 
+"Black Gram - उड़द"
+)
 
+# Pet Animals
+declare -a pet_animals=(
+"Dog - कुत्ता" "Cat - बिल्ली" "Rabbit - खरगोश" "Parrot - तोता" "Pigeon - कबूतर"
+"Horse - घोड़ा" "Cow - गाय" "Goat - बकरी" "Sheep - भेड़" "Hen - मुर्गी"
+)
+
+# Wild Animals
+declare -a wild_animals=(
+"Lion - शेर" "Tiger - बाघ" "Elephant - हाथी" "Bear - भालू" "Leopard - तेंदुआ"
+"Giraffe - जिराफ" "Zebra - ज़ेबरा" "Rhinoceros - गेंडा" "Deer - हिरण" "Fox - लोमड़ी"
+"Hyena - लकड़बग्घा" "Wolf - भेड़िया" "Cheetah - चीता" "Crocodile - मगरमच्छ"
+"Python - अजगर" "Kangaroo - कंगारू" "Panda - पांडा" "Gorilla - गोरिल्ला"
+"Chimpanzee - चिंपांज़ी" "Hippopotamus - दरियाई घोड़ा" "Koala - कोआला"
+"Jaguar - जैगुआर" "Ostrich - शुतुरमुर्ग" "Peacock - मोर" "Antelope - मृग"
+"Moose - मूज" "Bison - जंगली सांड" "Porcupine - साही" "Eagle - चील"
+"Hawk - बाज़"
+)
+
+# Function to show vocabulary
+show_vocabulary() {
+  title=$1
+  declare -a list1=("${!2}")
   clear
-  echo "$category"
+  echo "$title"
   echo "--------------------------------------------------"
-  for i in "${!english_array[@]}"; do
-    echo "${english_array[$i]} - ${hindi_array[$i]}"
+  for item in "${list1[@]}"; do
+    echo "$item"
   done
   read -p "Press any key to return to the main menu..." anykey
   show_main_menu
 }
 
-# Main menu to choose an option
+# Main menu
 show_main_menu() {
   clear
   echo "Vocabulary Lists"
@@ -252,99 +170,42 @@ show_main_menu() {
   echo "13. Crops"
   echo "14. Clothes"
   echo "15. Classroom Things"
-  echo "16. Shapes"
-  echo "17. Planets and the Sun"
-  echo "18. Indian Festivals"
-  echo "19. Millets"
-  echo "20. Kitchen Tools"
-  echo "21. Hospital Tools"
-  echo "22. Medicinal Plants"
-  echo "23. Oxygen-Producing Plants"
-  echo "24. Exit"
+  echo "16. Kitchen Tools"
+  echo "17. Hospital Tools"
+  echo "18. Medicinal Plants"
+  echo "19. Oxygen-Producing Plants"
+  echo "20. Food Grains"
+  echo "21. Pet Animals"
+  echo "22. Wild Animals"
+  echo "23. Exit"
   read -p "Please select an option: " option
 
   case $option in
-    1) show_vocabulary "Opposites" english_opposites[@] hindi_opposites[@] ;;
-    2) show_vocabulary "Masculine to Feminine" masculine_feminine[@] masculine_feminine[@] ;;
-    3) show_vocabulary "Pots Names" pots_names[@] pots_names[@] ;;
-    4) show_vocabulary "Flowers" flowers[@] flowers[@] ;;
-    5) show_vocabulary "Body Parts" body_parts[@] body_parts[@] ;;
-    6) show_vocabulary "Days of the Week" days[@] days[@] ;;
-    7) show_vocabulary "Months of the Year" months[@] months[@] ;;
-    8) show_vocabulary "Colors" colors[@] colors[@] ;;
-    9) show_vocabulary "Vegetables" vegetables[@] vegetables[@] ;;
-    10) show_vocabulary "Fruits" fruits[@] fruits[@] ;;
-    11) show_vocabulary "Birds" birds[@] birds[@] ;;
-    12) show_vocabulary "Metals" metals[@] metals[@] ;;
-    13) show_vocabulary "Crops" crops[@] crops[@] ;;
-    14) show_vocabulary "Clothes" clothes[@] clothes[@] ;;
-    15) show_vocabulary "Classroom Things" classroom_things[@] classroom_things[@] ;;
-    16) show_shapes ;;
-    17) show_planets ;;
-    18) show_festivals ;;
-    19) show_millets ;;
-    20) show_vocabulary "Kitchen Tools" kitchen_tools[@] kitchen_tools[@] ;;
-    21) show_vocabulary "Hospital Tools" hospital_tools[@] hospital_tools[@] ;;
-    22) show_vocabulary "Medicinal Plants" medicinal_plants[@] medicinal_plants[@] ;;
-    23) show_vocabulary "Oxygen-Producing Plants" oxygen_plants[@] oxygen_plants[@] ;;
-    24) exit 0 ;;
-    *) 
-      echo "Invalid option, please try again."
-      read -p "Press any key to return to the main menu..." anykey
-      show_main_menu
-      ;;
+    1) show_vocabulary "Opposites" english_opposites[@] ;;
+    2) show_vocabulary "Masculine to Feminine" masculine_feminine[@] ;;
+    3) show_vocabulary "Pots Names" pots_names[@] ;;
+    4) show_vocabulary "Flowers" flowers[@] ;;
+    5) show_vocabulary "Body Parts" body_parts[@] ;;
+    6) show_vocabulary "Days of the Week" days[@] ;;
+    7) show_vocabulary "Months of the Year" months[@] ;;
+    8) show_vocabulary "Colors" colors[@] ;;
+    9) show_vocabulary "Vegetables" vegetables[@] ;;
+    10) show_vocabulary "Fruits" fruits[@] ;;
+    11) show_vocabulary "Birds" birds[@] ;;
+    12) show_vocabulary "Metals" metals[@] ;;
+    13) show_vocabulary "Crops" crops[@] ;;
+    14) show_vocabulary "Clothes" clothes[@] ;;
+    15) show_vocabulary "Classroom Things" classroom_things[@] ;;
+    16) show_vocabulary "Kitchen Tools" kitchen_tools[@] ;;
+    17) show_vocabulary "Hospital Tools" hospital_tools[@] ;;
+    18) show_vocabulary "Medicinal Plants" medicinal_plants[@] ;;
+    19) show_vocabulary "Oxygen-Producing Plants" oxygen_plants[@] ;;
+    20) show_vocabulary "Food Grains" food_grains[@] ;;
+    21) show_vocabulary "Pet Animals" pet_animals[@] ;;
+    22) show_vocabulary "Wild Animals" wild_animals[@] ;;
+    23) exit ;;
+    *) echo "Invalid option, try again." ;;
   esac
-}
-
-# Function to show the shapes
-show_shapes() {
-  clear
-  echo "Shapes"
-  echo "--------------------------------------------------"
-  echo -e "Circle: \n${circle[@]}"
-  echo -e "\nSquare: \n${square[@]}"
-  echo -e "\nTriangle: \n${triangle[@]}"
-  echo -e "\nRectangle: \n${rectangle[@]}"
-  echo -e "\nOval: \n${oval[@]}"
-  echo -e "\nHexagon: \n${hexagon[@]}"
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
-}
-
-# Function to show the planets
-show_planets() {
-  clear
-  echo "Planets"
-  echo "--------------------------------------------------"
-  for planet in "${planets[@]}"; do
-    echo "$planet"
-  done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
-}
-
-# Function to show the festivals
-show_festivals() {
-  clear
-  echo "Indian Festivals"
-  echo "--------------------------------------------------"
-  for festival in "${indian_festivals[@]}"; do
-    echo "$festival"
-  done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
-}
-
-# Function to show millets
-show_millets() {
-  clear
-  echo "Millets"
-  echo "--------------------------------------------------"
-  for millet in "${millets[@]}"; do
-    echo "$millet"
-  done
-  read -p "Press any key to return to the main menu..." anykey
-  show_main_menu
 }
 
 # Run the script
